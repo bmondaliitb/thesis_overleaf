@@ -14,3 +14,7 @@ main.synctex.gz
 main.toc
 .vscode
 .DS_Store
+Chapters/*.aux
+Chapters/.DS_Store
+Appendix/.DS_Store
+Appendix/*.aux
