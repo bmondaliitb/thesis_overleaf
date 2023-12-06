@@ -1,0 +1,14 @@
+{
+    "grammarly.selectors": [
+        {
+            "language": "latex",
+            "scheme": "file",
+            "pattern": "Chapters/Chapter3.tex"
+        },
+        {
+            "language": "latex",
+            "scheme": "file",
+            "pattern": "Chapters/Chapter0.tex"
+        }
+    ]
+}
