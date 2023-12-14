@@ -1,0 +1,7 @@
+path="/home/buddha/omni_server/Storage/HEP/ttgamma/DiffXSec/Unfolding/xsec-tty-ljet/abs-xsec-with-trexfiles-local/v12/v_ljet_dilep_comb/v1/syst-all/"
+cp $path/tty1l_pt_all_syst/response_tty_pt_SR1_ljet.pdf h2_response_matrix_tty_ljet_dilep_combi_ph_pt_SR1.pdf
+cp $path/tty1l_pt_all_syst/response_tty_pt_SR2_ljet.pdf h2_response_matrix_tty_ljet_dilep_combi_ph_pt_SR2.pdf
+cp $path/tty1l_pt_all_syst/response_tty_pt_SR3_ljet.pdf h2_response_matrix_tty_ljet_dilep_combi_ph_pt_SR3.pdf
+cp $path/tty1l_pt_all_syst/response_tty_pt_SR4_ljet.pdf h2_response_matrix_tty_ljet_dilep_combi_ph_pt_SR4.pdf
+cp $path/tty2l_pt_all_syst/response_tty_pt_SR1_dilep.pdf h2_response_matrix_tty_ljet_dilep_combi_ph_pt_SR5.pdf
+cp $path/tty2l_pt_all_syst/response_tty_pt_SR1_dilep.pdf h2_response_matrix_tty_ljet_dilep_combi_ph_pt_SR6.pdf
