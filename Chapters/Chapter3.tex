@@ -1,26 +1,17 @@
 % Chapter Template
 
 \chapter{Measurement of the \tty cross-sections} % Main chapter title
-
 \label{Chapter3} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
-This chapter focuses on the measurements of the differential cross-section of
-the $\textbf{\tty production}$ (where \ttbar is produced in association with a
-\photon) and $\textbf{inclusive \tty}$ process (where \photon can come from the top
-quark decay products). The measurement is performed in single lepton and
-dilepton final states of the \ttbar decay, in single lepton channel one
-of the W boson decays leptonically whereas in the dilepton channel both the W bosons
-decay leptonically (Tau decay from the W boson is not considered). The
-cross-sections are measured from the dataset containing proton-proton collision at center-of-mass
-energy of 13 TeV collected by the ATLAS detector during its Run 2 phase (2015-2018). 
+This chapter focuses on the measurements of the differential cross-section of the $\textbf{\tty production}$ (where \ttbar is produced in association with a \photon) and $\textbf{inclusive \tty}$ process (where \photon can come from the top quark decay products). The measurement is performed in single lepton and dilepton final states of the \ttbar decay, in a single lepton channel one of the W bosons decays leptonically whereas in the dilepton channel both the W bosons decay leptonically (Tau decay from the W boson is not considered). The cross-sections are measured from the dataset containing proton-proton collision at a center-of-mass energy of 13 TeV collected by the ATLAS detector during its Run 2 phase (2015-2018). 
 
-The dataset contains all sorts of events. Our goal is to correctly measure the number of tty events in the dataset. A signal-enriched region is created with the selection of 4 jets, 2 bjet, one photon ... Other processes can enter our signal region by giving similar final state signature. For example ttbar production can enter where a photon is coming from the parton shower not from the hard scattering.
-MC simulation is used to model different background processes that give the similar signature in the final state and enter our signal region. Detector simulation is run on top of MC simulated events then the events are reconstructed using same object reconstruction algorithm as used in the data. MC simulations are properly reweighted and scaled to same luminosity as data. We can then do a direct comparison with data. More on this on the Section {MC simulation}.
-ATLAS detector object reconstruction algorithm is not 100\% efficient. Sometimes electron can get misreconstructed as photon. This e->y fake events are corrected using data driven approach mentioned in Section {egamma fake}. Also the final state lepton can come from other origin than the W boson from top quark. These leptons are called non-prompt lepton. Non-prompt lepton background is estimated using matrix method mentioned in Section {fake lepton}.
-Fianally after estimating all sources of background, in our signal region is well understood. A multi-class neural network is used to create a signal enriched region and background enriched regions.
-The cross-section is measured at particle level in a fiducial phase space with the definition mentioned in Section {fiducial phase space}. Differential cross-section is measured using profile likelihood unfolding methond mehtoned in Section {profile likelihood unfolding}.
-Different sources of uncertainties have been taken into account properly and used as nuisance parameter during the profile likelihood fit. Sources of uncertainties are mentioned in Section {uncertainties}.
+The dataset contains all sorts of events. Our goal is to correctly measure the number of \tty events from the dataset from which we can measure the cross-section. A signal-enriched region is created with the \ttbar-like selection with a requirement of an additional high energetic photon, details of the selection mentioned in ~\cref{sec:event-selection}.  Other processes can enter our signal region by giving a similar final state signature. For example, \ttbar production events can enter our signal-enriched region where a photon originated from the parton shower and not during the hard scattering. 
 
+MC simulation is used to model different signal and background processes. MC-simulated events are interfaced with detector simulation and then reconstructed using the same object reconstruction algorithm used in data. MC simulations are properly reweighted and scaled to the same luminosity of data, this can then be used to compare data and MC directly and understand the composition of processes predicted by SM in different phase space volumes. Details on the MC simulation are mentioned in Section ~\cref{sec:data-and-mc-simulations}. Details on the object reconstruction are mentioned in ~\cref{sec:trigger-object-event-selection}.
 
+ATLAS detector object reconstruction algorithm is not 100\% efficient. The reconstruction efficiency varies in different phase spaces. MC events are properly reweighted to take into account the object reconstruction efficiencies. Sometimes electrons can get mis-reconstructed as photon (we will be calling \efake), a slight mismodelling of this kind of event is still present even after correction of events using object reconstruction efficiencies. These \efake events in MC are corrected using a data-driven approach mentioned in Section ~\cref{sec:background-estimation-efake}. Also a slight mismodelling is observed between data and MC for the events in which photon originated from any hadron (we will be calling these events \hfake). The mismodelling in MC \hfake events are corrected using data-driven ABCD method mentioned in ~\cite{DiezPardos:2781712}. In data, events with final state lepton originating from other than W boson origin (fake lepton events) is estimated from the data using Matrix-method, mentioned in ~\cref{sec:background-estimation-lfake}. Estimated fake lepton events are used along with the signal and background simulated events to compare with data events. With this we have a signal region in which we can compare data with SM predicted signal and background processes (after correcting \efake, \hfake and non-prompt lepton events). In SM predicted processes uncertainty on cross-section is taken into account properly. Also uncertainty on estimation of \efake, \hfake and non-prompt lepton are estimated.
+
+A multi-class neural network is employed in data and in MC simulated events to create signal-enriched (SR) and background-enriched control regions (CRs). The differential cross-section is measured at particle level in a fiducial phase space with the definition mentioned in Section ~\cref{sec:fiducial-phase-space}. The differential cross-section is measured using the profile likelihood unfolding method (mentioned in Section ~\cref{sec:profile-likelihodd-unfolding}) for the observables listed in Table ~\cref{tab:listvariables}.
+Different sources of uncertainties have been incorporated to the likelihood model as Nuisance parameters (NP). Sources of uncertainties are mentioned in Section ~\cref{sec:sources-of-uncertainties}.
 
 
 %----------------------------------------------------------------------------------------
@@ -28,6 +19,7 @@ Different sources of uncertainties have been taken into account properly and use
 %----------------------------------------------------------------------------------------
 
 \section{Data set and event simulations}
+\label{sec:data-and-mc-simulations}
 
 
 %-----------------------------------
@@ -206,7 +198,7 @@ These are photons of type \emph{background photon} originating from baryons or m
 If the photon candidate classifies as neither \efake nor \hfake, it is treated as prompt.
 
 
-\section{Grouping of processes}
+\subsection{Grouping of processes}
 %\label{sec:process-grouping}
 
 For the convenience of the analysis the signal and background processes are grouped according to the needs as shown in the Table \ref{tab:process-grouping}. 
@@ -241,7 +233,7 @@ For the convenience of the analysis the signal and background processes are grou
     \bottomrule
   \end{tabular}
 \end{table}
-
+\FloatBarrier
 
 
 
@@ -250,17 +242,12 @@ For the convenience of the analysis the signal and background processes are grou
 %----------------------------------------------------------------------------------------
 
 \section{Trigger, object and event selections}
+\label{sec:trigger-object-event-selection}
 
 Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.
 
-%----------------------------------------------------------------------------------------
-%	SECTION 3
-%----------------------------------------------------------------------------------------
-
-\section{Analysis stategy}
-
-Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.
-
+\subsection{Event selection}
+\label{sec:event-selection}
 %----------------------------------------------------------------------------------------
 %	SECTION 3
 %----------------------------------------------------------------------------------------
@@ -270,13 +257,150 @@ Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat
 
 Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.
 
+\subsection{\efake background estimation}
+\label{sec:background-estimation-efake}
+
+\subsection{Fake lepton background estimation}
+\label{sec:background-estimation-lfake}
+
+
 %----------------------------------------------------------------------------------------
 %	SECTION 3
 %----------------------------------------------------------------------------------------
 
-\section{Systematic uncertainties}
+\section{Sources of uncertainties}
+\label{sec:sources-of-uncertainties}
 
 Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.
+
+\section{Fiducial phase space}
+\label{sec:fiducial-phase-space}
+
+\section{Differential cross-section measurement}
+\label{sec:diff-xsec-measurement}
+The cross-section is measured differentially within a defined fiducial phase space volume at particle level focusing on the observables listed in Table ~\cref{tab:listvariables}. This measurement employs an unfolding technique which is essential for deriving the truth spectrum of an observable from its reconstructed counterpart. Unfolding is crucial for correcting the detector effects such as limited resolutions and acceptance, making the results easier to compare with the theoretical predictions. For this purpose, we implement profile likelihood unfolding method, detailed in ~\cref{sec:profile-likelihodd-unfolding}. 
+
+Ideally, we would like to see a continuous functional dependence, but due to the finite resolution of the measurement, it is not possible to do so. Instead, we measure the cross-section in different bins. Details on choice of the binning mentioned in the Section ~\cref{sec:choice-of-binning}. 
+
+\begin{table}[ht]
+\caption{The differential cross sections for the l+jets and dilepton channels are measured for the following variables: }
+\label{tab:listvariables}
+\begin{footnotesize}
+\begin{tabular} {r l }
+  Symbol & Defintion \\
+  \hline
+  Both dilepton and single lepton channels: & \\
+  \hline 
+  \pt($\gamma$) & Transverse momentum of photon \\ 
+  $|\eta|$($\gamma$) & Absolute value of the pseudorapidity of the photon \\
+  \DRlph & Angular separation between the photon and the closest lepton \\
+  $\Delta R_{min}(\gamma, b)$ &  Angular separation between the photon and the closest $b$ jet \\
+  $\Delta R_{min}(l, j)$ & Smallest angular separation between any of the selected leptons and jets \\
+  $p_T(j_1)$ & Transverse momentum of the leading jet\\
+
+  \hline
+  Additional variables for dilepton channel: & \\
+  \hline
+  $\Delta R(\gamma, l_1)$ & Angular separation between the photon and the leading lepton\\
+  $\Delta R(\gamma, l_2)$ & Angular separation between the photon and the subleading lepton\\
+  \Detall & Pseudorapidity difference between the two leptons\\
+  \Dphill & Azimuthal angle difference between the two leptons\\
+  $p_T(l,l)$ & Transverse momentum of the dilepton system\\
+  $p_T(j_1)$ & Transverse momentum of the leading jet\\
+    
+\end{tabular}
+
+\end{footnotesize}
+\end{table}
+\FloatBarrier
+
+For unfolding we need truth distribution as well as the response matrices as inputs.
+
+\subsection{Profile likelihood unfolding}
+\label{sec:profile-likelihodd-unfolding}
+The TRExFitter framework is used for the fitting and unfolding process. It utilizes standard profile likelihood fitting for unfolding~\cite{cls_3}. This method transforms the unfolding problem into a standard problem of fitting the normalization of distributions. By using the standard profile-likelihood machinery, the truth distribution on particle level with N bins is multiplied by a corresponding "response matrix" of size N x M, which includes the selection efficiency, migration matrix, and acceptance. This results in a distribution on the detector level with M bins. It is important to note that the normalization of these folded distributions on the detector level is identical to the normalization of the truth distribution. Therefore, by measuring the normalization of each folded distribution on the detector level, the normalization of the truth level is directly obtained, which is the ultimate goal of the unfolding process.
+
+The likelihood can be expressed as:
+\begin{equation}
+	L(\vec{n}^{data},\vec{a} | \vec{k}, \vec{\theta}) = \prod_{\mathrm{c} \epsilon \mathrm{Region}} \quad \prod_{\mathrm{b} \epsilon \mathrm{Bins}} \mathrm{Pois} (n^{\mathrm{data}}_{b,c}|\nu_{b,c}(\vec{k}, \Vec{\theta})) \cdot \prod_{p} c_p(a_p|\theta_{p})
+\end{equation}
+
+%
+%\begin{equation}
+%    \mathcal{L} = \prod_{\mathrm{c} \epsilon \mathrm{Region}} \quad \prod_{\mathrm{b} \epsilon \mathrm{Bins}} \mathrm{Pois} (N^{\mathrm{data}}_{b,c}|\nu_{b,c}(\Vec{\theta})) \cdot \prod_{p} \mathrm{Gauss}(0|\theta_{p}, 1)
+%\end{equation}
+
+
+where, \textit{Region} refers to the different signal and control regions, 
+\textit{Bins} refers to the bin of the reconstruction level 
+histogram, $n^{\mathrm{data}}_{b,c}$ is the data in bin \textit{b} and 
+region \textit{c}, $\vec{a}$ is auxiliary data (e.g. from CP group calibration measurement), 
+$\nu_{b,c}$ is the expected total events in bin \textit{b} and channel \textit{c}. $\Vec{\theta}$ 
+are the constrained nuisance parameter describing systematic uncertainties ~\cref{sec:sources-of-uncertainties},
+ $\vec{k}$ are the unconstrained parameters (e.g. POIs) and $c_p$ is constraint term 
+ (Gaussian or Poisson depending on the nature of the systematics)\\
+
+$\nu_{b,c}$ can be expressed as follows:
+
+\begin{align}
+    \nu_{b,c} = \left[\sum_i \gamma_{b,c,i} \cdot \mu_{i} \cdot R_{b,c,i} \cdot T_{i}\right] + \sum_{B} \gamma_{b,c}^{B} \times N_{b,c}^{B} 
+\end{align}
+
+where, $\gamma$ factors are the bin-by-bin scale factors for MC statistical uncertainties. 
+The background samples each have the factors $\gamma_{b,c}^{B}$ and for the signal each truth 
+bin has an unique $\gamma_{b,c,t}$. 
+%There are a total of X $\gamma$ factors for the 
+%signal and Y (Z for each background) for the backgrounds. 
+$R_{b,c,t}$ are the response matrices of the signal, calculated from 
+the particle level and reconstruction level events. $\mu_{i}$ corresponds 
+to the signal strength of the bin $T_{i}$ at particle level.
+
+
+Subsequently, a Profile Likelihood fit is performed with this Likelihood in \emph{TRexFitter}\footnote{\url{https://trexfitter-docs.web.cern.ch/trexfitter-docs/}}
+
+\subsection{Choice of binning}
+\label{sec:choice-of-binning}
+The choice of the binning depends on several factors: the bin width of each bin must be greater than the resolution of the observable in that range and that the statistical uncertainties in every bin of the measured distribution are small enough to avoid large fluctuations. To achieve this, two criteria were chosen to determine the bin widths. The bin width is chosen such that it is larger than twice the resolution of the observable and that the expected statistical uncertainty in the measured distribution is below 10\%. The binning study was performed in the dilepton channel. 
+
+We studied this for \tty production and \tty (total) measurement and compared the binning with the
+\tty (total) measurement performed by CMS experiment \cite{CMS2022}. The algorithm starts with a
+finer binned histogram at reconstruction level and starts to merge bin from left to right till the
+statistical uncertainty reaches below 5-7\% (depending on the observable). This
+process is only performed considered the signal region due to the complexity of the profile
+likelihood unfolding across multiple reconstruction regions. After determining the
+binning edges through the algorithm, the fit and unfolding are performed and finally the
+statistical uncertainty is verified at the unfolded distribution. A crucial
+consideration is that the binning choice should exceed twice the resolution of the
+variable, as stated above. The resolution for the variable $\pt(\gamma)$, $|\eta(\gamma)|$, $\Delta
+R(\gamma,l)$, $\Delta R(\gamma,b)$, $\Delta R_{min}(l,j)$, $\Delta \eta(l,l)$, $\Delta
+\phi(l,l)$, $\pt(j_1)$, $\pt(l,l)$ are found to be around 1-2 GeV, 0.1-0.15,
+0.005-0.008, 0.014-0.020, 0.01, 0.0006, 0.0003, 10 GeV, 2-3 GeV, respectively. The optimized 
+bin widths based on the statistical uncertainty fullfilled in all cases the resolution criterion.  
+
+During binning optimization, we observed slight statistical fluctuations in some bins, which can be attributed
+to the complexities of fit and unfolding across regions. For those cases the
+bin boundaries were slightly adjusted as well as to have simpler bin edges (e.g. multiples of 0.1, 5, 10 depending on the distribution). 
+
+We have performed this for \tty(prod) and \tty(total) distribution. The results
+are compared among the two sets and with the binning used by CMS measurement.
+The bin boundaries showed significant similarities. Testing our unfolding setup
+against CMS binning revealed that the unfolded distributions met the set
+criteria, yielding in general similar uncertainties and migrations.
+Consequently, we adopted the CMS binning, allowing a more conducive comparison
+in the future. For illustration, the resolution and comparison of two setups for some example variables can be found in Appendix~\ref{sec:binning_optimization_study}.
+
+The same binning was applied to the l+jets channel. The unfolded $\pt(\gamma)$
+distribution is used as input for the EFT measurement to set upper limits on
+four parameters, see Section~\ref{sec:result} combining the single lepton and
+dilepton fiducial phase spaces as mentioned in the Section
+~\ref{sec:diff_xsec_combi}. The binning for this variable was revised to improve
+the sensitivity in the EFT measurement, increasing the number of bins while
+keeping the total expected uncertainty in the tail of the disribution around
+10\%, which is most sensitive to the EFT parameters.  
+
+
+
+
 
 %----------------------------------------------------------------------------------------
 %	SECTION 3
