@@ -316,6 +316,10 @@ Ideally, a continuous functional dependence of the measurement would be preferab
 
 As detailed in section ~\cref{sec:profile-likelihodd-unfolding} truth distribution as well as the response matrices for the corresponding observable are needed as inputs for the unfolding. More details on how the truth distributions and response matrices are constructed are detailed in ~\cref{sec:inputs-for-unfolding}.
 
+Before the unfolding procedure is applied to the real dataset it is applied on the psuedo-data (MC) to validate the unfolding procedure. Here pseudo-data refers to the sum of all MC samples including signal and backgrounds. The unfolded pseudo-data is compared with the truth distribution of the signal, and a good closure is observed (more on closure test in ~\cref{sec:closure_test}). This validates that the unfolding procedure using response matrix and truth distribution is working as expected. The signal shape in data can be different than MC simulation, our unfolding using MC truth distribution and response matrix (which is derived from MC simulation) can create bias while measuring the signal from the data. Through stress test mentioned in ~\cref{sec:stress_test} we can validate that unfolding procedure is very robust and can handle the shape difference between data and MC. 
+
+After the fit and unfolding is performed in the real dataset, the results are detailed in ~\cref{sec:tty_prod_measurement} and ~\cref{sec:tty_total_measurement} ~\cref{sec:tty_prod_sldl_measurement} for \tty production measurement, inclusive \tty measurement and \tty production measurement in a combined single lepton and dilepton channel respectively.
+
 
 
 \subsection{Profile likelihood unfolding}
@@ -452,13 +456,13 @@ For illustration, the normalised migration matrices for $p_T(\gamma)$ in the dif
 %%%%%%%%
 \begin{figure}[ht]
     \centering
-    \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/ljet/Migration/migration_h2_ph_pt_reco_part_full_weighted_SR1.pdf}}
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Migration/migration_h2_ph_pt_reco_part_full_weighted_SR1.pdf}}
     \quad\quad
-    \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/ljet/Migration/migration_h2_ph_pt_reco_part_full_weighted_SR2.pdf}}
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Migration/migration_h2_ph_pt_reco_part_full_weighted_SR2.pdf}}
     \quad\quad
-    \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/ljet/Migration/migration_h2_ph_pt_reco_part_full_weighted_SR3.pdf}}
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Migration/migration_h2_ph_pt_reco_part_full_weighted_SR3.pdf}}
     \quad\quad
-    \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/ljet/Migration/migration_h2_ph_pt_reco_part_full_weighted_SR4.pdf}}
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Migration/migration_h2_ph_pt_reco_part_full_weighted_SR4.pdf}}
     \quad\quad
     \caption{The normalised migration matrices, $M_{\mathrm{r,t}}$, representing the migration of events from particle level to reconstruction level  for the four regions defined by the NN: (a) \tty (prod.) enriched region, (b) \tty (dec.) enriched region
     (c) fakes enriched region, (d) prompt photon enriched region for the observable $p_T(\gamma)$ in single lepton channel.}
@@ -471,26 +475,26 @@ For illustration, the normalised migration matrices for $p_T(\gamma)$ in the dif
 %%%
 \begin{figure}[!ht]
   \centering
-  \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/ljet/Migration/response_h2_response_matrix_ph_pt_SR1.pdf}}
+  \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Migration/response_h2_response_matrix_ph_pt_SR1.pdf}}
   \quad\quad
-  \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/ljet/Migration/response_h2_response_matrix_ph_pt_SR2.pdf}}
+  \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Migration/response_h2_response_matrix_ph_pt_SR2.pdf}}
   \quad\quad
-  \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/ljet/Migration/response_h2_response_matrix_ph_pt_SR3.pdf}}
+  \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Migration/response_h2_response_matrix_ph_pt_SR3.pdf}}
   \quad\quad
-  \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/ljet/Migration/response_h2_response_matrix_ph_pt_SR4.pdf}}
+  \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Migration/response_h2_response_matrix_ph_pt_SR4.pdf}}
   \caption[Short caption for LoF]{Response matrices for the observable $p_T(\gamma)$ in the l+jets channel, split across four regions determined by the Neural Network (NN) output. (a-d) Response matrices for the \tty (prod.), \tty (dec.), fakes, and prompt photon enriched regions, respectively. -- \emph{Continued on next page}}
   \label{fig:folding_input_response_ljet_pt1}
 \end{figure}
 \begin{figure}[!ht]
   \ContinuedFloat
   \centering
-  \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/ljet/Folded_distributions/tty1l_pt_all_syst/Plots/SR1.pdf}}
+  \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Folded_distributions/tty1l_pt_all_syst/Plots/SR1.pdf}}
   \quad\quad
-  \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/ljet/Folded_distributions/tty1l_pt_all_syst/Plots/SR2.pdf}}
+  \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Folded_distributions/tty1l_pt_all_syst/Plots/SR2.pdf}}
   \quad\quad
-  \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/ljet/Folded_distributions/tty1l_pt_all_syst/Plots/SR3.pdf}}
+  \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Folded_distributions/tty1l_pt_all_syst/Plots/SR3.pdf}}
   \quad\quad
-  \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/ljet/Folded_distributions/tty1l_pt_all_syst/Plots/SR4.pdf}}
+  \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Folded_distributions/tty1l_pt_all_syst/Plots/SR4.pdf}}
   \caption[]{(e-h) Corresponding Data-MC comparisons. The signal distribution at the reconstruction level was created by folding the truth distribution with the respective response matrix.}
   \label{fig:folding_input_response_ljet_pt2}
 \end{figure}
@@ -500,9 +504,9 @@ For illustration, the normalised migration matrices for $p_T(\gamma)$ in the dif
 %%%%%%%%
 \begin{figure}[ht]
     \centering
-    \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep/Migration/migration_h2_ph_pt_reco_part_full_weighted_SR1.pdf}}
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Migration/migration_h2_ph_pt_reco_part_full_weighted_SR1.pdf}}
     \quad\quad
-    \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep/Migration/migration_h2_ph_pt_reco_part_full_weighted_SR2.pdf}}
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Migration/migration_h2_ph_pt_reco_part_full_weighted_SR2.pdf}}
 
     \caption{The normalised migration matrices, $M_{\mathrm{r,t}}$ representing the migration of events from the particle level bin to the reconstruction level bin for the two regions defined by the NN output: (a) $O_{\mathrm{NN}} \geq 0.6$ 
     and (b) $O_{\mathrm{NN}} < 0.6$, for the observable $p_T(\gamma)$ in the dilepton channel.}
@@ -515,13 +519,13 @@ For illustration, the normalised migration matrices for $p_T(\gamma)$ in the dif
 %%%
 \begin{figure}[ht]
     \centering
-    \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep/Migration/response_h2_response_matrix_ph_pt_SR1.pdf}}
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Migration/response_h2_response_matrix_ph_pt_SR1.pdf}}
     \quad\quad
-    \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep/Migration/response_h2_response_matrix_ph_pt_SR2.pdf}}
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Migration/response_h2_response_matrix_ph_pt_SR2.pdf}}
     \quad\quad
-    \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep/Folded_distributions/tty2l_pt_all_syst/Plots/SR1.pdf}}
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Folded_distributions/tty2l_pt_all_syst/Plots/SR1.pdf}}
     \quad\quad
-    \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep/Folded_distributions/tty2l_pt_all_syst/Plots/SR2.pdf}}
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Folded_distributions/tty2l_pt_all_syst/Plots/SR2.pdf}}
     \quad\quad
     \caption{Illustration of response matrices and data-MC comparison plots for
     the observable $p_T(\gamma)$ in dilepton channel. The two regions are
@@ -542,7 +546,22 @@ For illustration, the normalised migration matrices for $p_T(\gamma)$ in the dif
 \label{sec:tty_prod_measurement}
 %\textcolor{red}{To do: add results for inclusive \tty measurement (\tty production + decay), ongoing since the particle level information of \tty decay was missing until recently.}
 
-In this section, we will present results of the unfolded likelihood fit using data for the \tty production cross section measurement. After the fit, the resulting post-fit $p_T(\gamma)$ distribution are shown in Figure~\ref{fig:pt_postfit_ljet_realdata} for the single lepton channel and in Figure~\ref{fig:pt_postfit_dilep_realdata} for the dilepton channel. The resulting pulls of the NPs  are shown in Figure ~\ref{fig:pull_plot_pt_tty_dec_free_ljet_mu_blinded}, Figure ~\ref{fig:pull_plot_pt_tty_dec_free_dilep_mu_blinded_1}, ~\ref{fig:pull_plot_pt_tty_dec_free_dilep_mu_blinded_2} and the correlations in Figure ~\ref{fig:NP-corr_ljet_mu_blinded} and Figure ~\ref{fig:NP-corr_dilep_mu_blinded}, for the lepton+jets and dilepton channels, respectively. The post-fit value of all the NPs changed within 1 $\sigma$, with a large fraction of the NPs having very small pulls and constrains, which indicate that the fit is robust and not affected by any unexpected behavior of the NPs. Ranking plots are shown in Figures ~\ref{fig:ranking_ljet_total} and ~\ref{fig:ranking_dilep_total} for single lepton and dilepton channels. The unfolded distributions at particle level are shown in Figures ~\ref{fig:pt_unfolded_ljet_dist_realdata} and ~\ref{fig:pt_unfolded_dilep_dist_realdata_1} and ~\ref{fig:pt_unfolded_dilep_dist_realdata_2} for single lepton and dilepton channels. Furthermore the Norm Factors are shown in Figures ~\ref{fig:pt_unfolded_ljet_table_realdata} and ~\ref{fig:pt_unfolded_dilep_table_realdata} for single lepton channel and dilepton channel respectively. The normalized unfolded distributions are shown in Figures ~\ref{fig:tty_prod_diff_Ljets_norm} and ~\ref{fig:tty_prod_diff_DL1_norm} for single lepton and dilepton channels respectively. The decomposed uncertainties of the unfolded distributions for the absolute differential cross-sections are illustrated in Figures ~\ref{fig:tty_prod_diff_Ljets_groupedimpact} and ~\ref{fig:tty_prod_diff_DL1_groupedimpact}, ~\ref{fig:tty_prod_diff_DL2_groupedimpact} for single lepton channel and dilepton channel respectively. $\chi^2$/ndf and $p$-values between the measured absolute and normalised cross-sections of \tty production and the NLO \MGNLO simulations interfaced with \PYTHIA[8] and \HERWIG[7] are shown in Table ~\ref{tab:chi2_ttyprod}.
+In this section, we will present results of the unfolded likelihood fit using data for the \tty production cross section measurement. After the fit, the resulting post-fit $p_T(\gamma)$ distribution are shown in Figure~\ref{fig:pt_postfit_ljet_realdata} for the single lepton channel and in Figure~\ref{fig:pt_postfit_dilep_realdata} for the dilepton channel. 
+\\
+As mentioned earlier that the systematic uncertainties are taken into account as the nuisance parameter (NP) in the likelihood function. And they are kept constrained with Gaussian or Poisson function depending on the nature of the uncertainties.
+% explain pull plot
+During the likelihood minimization, the shift in the fitted values for the NP are shown using the pull plot. A pull plot is a type of histogram used to visualize the difference between the measured values and the predicted values from a fit, normalized by the uncertainty. Each data point in a pull plot represents a particular parameter. The x-value of the data point is the "pull" value, calculated as (measured - predicted) / uncertainty. If the fit is perfect, the pull values should follow a standard normal distribution (mean of 0 and standard deviation of 1). This is because the difference between the measured and predicted values should be zero on average, and the normalization by the uncertainty should scale the distribution to have a standard deviation of 1. The pull plots are shown in Figure ~\ref{fig:pull_plot_pt_tty_dec_free_ljet_mu_blinded}, Figure ~\ref{fig:pull_plot_pt_tty_dec_free_dilep_mu_blinded_1}, ~\ref{fig:pull_plot_pt_tty_dec_free_dilep_mu_blinded_2}. 
+\\
+
+The correlation is calculated among the parameter of interests (POIs) and the NPs shown in Figure ~\ref{fig:NP-corr_ljet_mu_blinded} and Figure ~\ref{fig:NP-corr_dilep_mu_blinded}, for the lepton+jets and dilepton channels, respectively. The post-fit value of all the NPs changed within 1 $\sigma$, with a large fraction of the NPs having very small pulls and constraints, which indicate that the fit is robust and not affected by any unexpected behavior of the NPs. Here constraint means that the pre-fit uncertainty for that parameter was overspecified,i.e., the actual post-fit uncertainty turned out to be smaller than the pre-fit estimate. \\
+
+Also the impact of the NPs on the measurement of the POIs are estimated using the Ranking plot. 
+% explain ranking plot
+The ranking plot shows the impact of the NPs on the measurement of the POIs. The impact is calculated by varying each NP by $\pm 1 \sigma$ while keeping others at the post-fit vale and measuring the change in the POIs.
+Ranking plots are shown in Figures ~\ref{fig:ranking_ljet_total} and ~\ref{fig:ranking_dilep_total} for single lepton and dilepton channels. 
+Furthermore the post-fitted values of the POIs (Norm Factors) are shown in Figures ~\ref{fig:pt_unfolded_ljet_table_realdata} and ~\ref{fig:pt_unfolded_dilep_table_realdata} for single lepton channel and dilepton channel respectively.  \\
+
+The unfolded distributions at particle level are shown in Figures ~\ref{fig:pt_unfolded_ljet_dist_realdata} and ~\ref{fig:pt_unfolded_dilep_dist_realdata_1} and ~\ref{fig:pt_unfolded_dilep_dist_realdata_2} for single lepton and dilepton channels. The normalized unfolded distributions are shown in Figures ~\ref{fig:tty_prod_diff_Ljets_norm} and ~\ref{fig:tty_prod_diff_DL1_norm} for single lepton and dilepton channels respectively. The decomposed uncertainties of the unfolded distributions for the absolute differential cross-sections are illustrated in Figures ~\ref{fig:tty_prod_diff_Ljets_groupedimpact} and ~\ref{fig:tty_prod_diff_DL1_groupedimpact}, ~\ref{fig:tty_prod_diff_DL2_groupedimpact} for single lepton channel and dilepton channel respectively. $\chi^2$/ndf and $p$-values between the measured absolute and normalised cross-sections of \tty production and the NLO \MGNLO simulations interfaced with \PYTHIA[8] and \HERWIG[7] are shown in Table ~\ref{tab:chi2_ttyprod}.
 
 
 %The parameter of interests $\mu$ (\tty. prod signal strength) and the normalisation of \tty (decay) 
@@ -567,13 +586,14 @@ In this section, we will present results of the unfolded likelihood fit using da
 
 \begin{figure}[ht]
   \centering
-  \subfloat[]{\includegraphics[width=0.45\textwidth]{figures/diff_xsec/ljet/post_fit/tty1l_pt_all_syst/Plots/SR1_postFit.pdf}}
-  \quad\quad
-  \subfloat[]{\includegraphics[width=0.45\textwidth]{figures/diff_xsec/ljet/post_fit/tty1l_pt_all_syst/Plots/SR2_postFit.pdf}}
-  \quad\quad
-  \subfloat[]{\includegraphics[width=0.45\textwidth]{figures/diff_xsec/ljet/post_fit/tty1l_pt_all_syst/Plots/SR3_postFit.pdf}}
-  \quad\quad
-  \subfloat[]{\includegraphics[width=0.45\textwidth]{figures/diff_xsec/ljet/post_fit/tty1l_pt_all_syst/Plots/SR4_postFit.pdf}}
+  \subfloat[]{\includegraphics[width=0.30\textwidth]{figures/diff_xsec/ljet/post_fit/tty1l_pt_all_syst/Plots/SR1_postFit.pdf}}
+  \quad \quad
+  \subfloat[]{\includegraphics[width=0.30\textwidth]{figures/diff_xsec/ljet/post_fit/tty1l_pt_all_syst/Plots/SR2_postFit.pdf}}
+  \quad \quad
+  \subfloat[]{\includegraphics[width=0.30\textwidth]{figures/diff_xsec/ljet/post_fit/tty1l_pt_all_syst/Plots/SR3_postFit.pdf}}
+  \quad \quad
+  \subfloat[]{\includegraphics[width=0.30\textwidth]{figures/diff_xsec/ljet/post_fit/tty1l_pt_all_syst/Plots/SR4_postFit.pdf}}
+
 
   \caption{The post-fit distributions of $p_T(\gamma)$ in 4 regions ( (a) \tty (prod.) enriched region  (b) \tty (dec.) enriched region
   (c) fakes enriched region (d) prompt photon enriched region) in single lepton channel. }
@@ -584,9 +604,9 @@ In this section, we will present results of the unfolded likelihood fit using da
 
 \begin{figure}[ht]
   \centering
-  \subfloat[]{\includegraphics[width=0.45\textwidth]{figures/diff_xsec/dilep/post_fit/tty2l_pt_all_syst/Plots/SR1_postFit.pdf}}
-  \quad\quad
-  \subfloat[]{\includegraphics[width=0.45\textwidth]{figures/diff_xsec/dilep/post_fit/tty2l_pt_all_syst/Plots/SR2_postFit.pdf}}
+  \subfloat[]{\includegraphics[width=0.30\textwidth]{figures/diff_xsec/dilep/post_fit/tty2l_pt_all_syst/Plots/SR1_postFit.pdf}}
+  \quad \quad
+  \subfloat[]{\includegraphics[width=0.30\textwidth]{figures/diff_xsec/dilep/post_fit/tty2l_pt_all_syst/Plots/SR2_postFit.pdf}}
   \caption{The post-fit distributions of $p_T(\gamma)$ in two regions (based on the cut on the Neural Network output) (a) $O_{NN}>=0.6$ (b) $O_{NN}<0.6$ 
   in dilepton channel.}
   \label{fig:pt_postfit_dilep_realdata}
@@ -606,6 +626,21 @@ In this section, we will present results of the unfolded likelihood fit using da
 \end{figure}
 \FloatBarrier
 
+
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+      \includegraphics[width=\textwidth, viewport=0 0 100 100, clip]{figures/diff_xsec/dilep_tty_prod_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_pt_ptj1_ptll/NuisPar_comp.pdf}
+      \caption{Zoomed in part 1}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+      \includegraphics[width=\textwidth, viewport=100 0 200 100, clip]{figures/diff_xsec/dilep_tty_prod_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_pt_ptj1_ptll/NuisPar_comp.pdf}
+      \caption{Zoomed in part 2}
+  \end{subfigure}
+  \caption{Zoomed in parts of the image}
+  \label{fig:zoomed_image}
+\end{figure}
 
 \begin{figure}[ht]
   \centering
@@ -656,25 +691,25 @@ In this section, we will present results of the unfolded likelihood fit using da
 \begin{figure}[ht]
   \centering
   \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/ljet_tty_prod_mu_blinded/Ranking/tty1l_pt_all_syst/Ranking_tty_pt_Bin_001_mu.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/ljet_tty_prod_mu_blinded/Ranking/tty1l_pt_all_syst/Ranking_tty_pt_Bin_002_mu.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/ljet_tty_prod_mu_blinded/Ranking/tty1l_pt_all_syst/Ranking_tty_pt_Bin_003_mu.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/ljet_tty_prod_mu_blinded/Ranking/tty1l_pt_all_syst/Ranking_tty_pt_Bin_004_mu.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/ljet_tty_prod_mu_blinded/Ranking/tty1l_pt_all_syst/Ranking_tty_pt_Bin_005_mu.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/ljet_tty_prod_mu_blinded/Ranking/tty1l_pt_all_syst/Ranking_tty_pt_Bin_006_mu.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/ljet_tty_prod_mu_blinded/Ranking/tty1l_pt_all_syst/Ranking_tty_pt_Bin_007_mu.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/ljet_tty_prod_mu_blinded/Ranking/tty1l_pt_all_syst/Ranking_tty_pt_Bin_008_mu.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/ljet_tty_prod_mu_blinded/Ranking/tty1l_pt_all_syst/Ranking_tty_pt_Bin_009_mu.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/ljet_tty_prod_mu_blinded/Ranking/tty1l_pt_all_syst/Ranking_tty_pt_Bin_010_mu.pdf}}
-  \quad \quad
+  \quad
 
   \caption{Ranking plots of the 10 NPs with the largest impact on the \tty (prod) singal strength in each bin of the $p_T(\gamma)$ distribution in the single 
   lepton channel. The fit was performed to the real dataset. Each subfigure, labeled (a), (b), (c), (d), ... (j), corresponds to a specific bin 
@@ -687,18 +722,17 @@ In this section, we will present results of the unfolded likelihood fit using da
 
 \begin{figure}[ht]
   \centering
-  \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty_pt_Bin_001_mu.pdf}}
-  \quad \quad
-  \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty_pt_Bin_002_mu.pdf}}
-  \quad \quad
-  \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty_pt_Bin_003_mu.pdf}}
-  \quad \quad
-  \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty_pt_Bin_004_mu.pdf}}
-  \quad \quad
-  \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty_pt_Bin_005_mu.pdf}}
-  \quad \quad
-  \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty_pt_Bin_006_mu.pdf}}
-  \quad \quad
+  \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty_pt_Bin_001_mu.pdf}}
+  \quad
+  \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty_pt_Bin_002_mu.pdf}}
+  \quad
+  \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty_pt_Bin_003_mu.pdf}}
+  \quad
+  \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty_pt_Bin_004_mu.pdf}}
+  \quad
+  \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty_pt_Bin_005_mu.pdf}}
+  \quad
+  \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty_pt_Bin_006_mu.pdf}}
   \caption{Ranking plots of the 10 NPs with the largest impact on the \tty (prod) signal strength in each bin of the $p_T(\gamma)$ distribution in the dilepton channel. 
   The fit was performed to the real dataset. Each subfigure, labeled (a), (b), (c), (d), (e), and (f), corresponds to a specific bin 
   of the $p_T(\gamma)$ distribution, with bin 1 (lowest \pt) represented in subfigure (a), bin 2 represented in 
@@ -771,15 +805,15 @@ In this section, we will present results of the unfolded likelihood fit using da
 \begin{figure}[ht]
   \centering
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet_tty_prod_mu_blinded/Unfolded_data/tty1l_pt_all_syst/NormFactors.pdf}}
-  \quad\quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet_tty_prod_mu_blinded/Unfolded_data/tty1l_eta_all_syst/NormFactors.pdf}}
-  \quad\quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet_tty_prod_mu_blinded/Unfolded_data/tty1l_dr_all_syst/NormFactors.pdf}}
-  \quad\quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet_tty_prod_mu_blinded/Unfolded_data/tty1l_drphb_all_syst/NormFactors.pdf}}
-  \quad\quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet_tty_prod_mu_blinded/Unfolded_data/tty1l_drlj_all_syst/NormFactors.pdf}}
-  \quad\quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet_tty_prod_mu_blinded/Unfolded_data/tty1l_ptj1_all_syst/NormFactors.pdf}}
   \caption{ The figure displays the normalization factors obtained from the fit to the real dataset for the single 
   lepton channel for the following observables: (a) $p_T(\gamma)$, (b) $|\eta(\gamma|)$, 
@@ -792,25 +826,25 @@ In this section, we will present results of the unfolded likelihood fit using da
 \begin{figure}[ht]
   \centering
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Unfolded_data/tty2l_pt_all_syst/NormFactors.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Unfolded_data/tty2l_eta_all_syst/NormFactors.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Unfolded_data/tty2l_dr_all_syst/NormFactors.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Unfolded_data/tty2l_dr1_all_syst/NormFactors.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Unfolded_data/tty2l_dr2_all_syst/NormFactors.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Unfolded_data/tty2l_dEtall_all_syst/NormFactors.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Unfolded_data/tty2l_dPhill_all_syst/NormFactors.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Unfolded_data/tty2l_ptll_all_syst/NormFactors.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Unfolded_data/tty2l_drphb_all_syst/NormFactors.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Unfolded_data/tty2l_drlj_all_syst/NormFactors.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/Unfolded_data/tty2l_ptj1_all_syst/NormFactors.pdf}}
   \caption{ The figure displays the normalisation factors obtained from the fit to the real dataset for the dilepton channel
   for the following observables: (a) $p_T(\gamma)$, (b) $|\eta(\gamma|)$, (c) $\Delta R_{min}(\gamma, l)$
@@ -853,13 +887,13 @@ In this section, we will present results of the unfolded likelihood fit using da
 
 \begin{figure}[ht]
   \centering
-  \subfloat[]{\includegraphics[width=0.45\textwidth]{figures/diff_xsec/ljet_tty_total/post_fit/tty1l_pt_all_syst/Plots/SR1_postFit.pdf}}
+  \subfloat[]{\includegraphics[width=0.30\textwidth]{figures/diff_xsec/ljet_tty_total/post_fit/tty1l_pt_all_syst/Plots/SR1_postFit.pdf}}
   \quad\quad
-  \subfloat[]{\includegraphics[width=0.45\textwidth]{figures/diff_xsec/ljet_tty_total/post_fit/tty1l_pt_all_syst/Plots/SR2_postFit.pdf}}
+  \subfloat[]{\includegraphics[width=0.30\textwidth]{figures/diff_xsec/ljet_tty_total/post_fit/tty1l_pt_all_syst/Plots/SR2_postFit.pdf}}
   \quad\quad
-  \subfloat[]{\includegraphics[width=0.45\textwidth]{figures/diff_xsec/ljet_tty_total/post_fit/tty1l_pt_all_syst/Plots/SR3_postFit.pdf}}
+  \subfloat[]{\includegraphics[width=0.30\textwidth]{figures/diff_xsec/ljet_tty_total/post_fit/tty1l_pt_all_syst/Plots/SR3_postFit.pdf}}
   \quad\quad
-  \subfloat[]{\includegraphics[width=0.45\textwidth]{figures/diff_xsec/ljet_tty_total/post_fit/tty1l_pt_all_syst/Plots/SR4_postFit.pdf}}
+  \subfloat[]{\includegraphics[width=0.30\textwidth]{figures/diff_xsec/ljet_tty_total/post_fit/tty1l_pt_all_syst/Plots/SR4_postFit.pdf}}
 
   \caption{The post-fit distributions of $p_T(\gamma)$ in 4 regions ( (a) \tty (prod.) enriched region  (b) \tty (dec.) enriched region
   (c) fakes enriched region (d) prompt photon enriched region) in single lepton channel. }
@@ -870,9 +904,9 @@ In this section, we will present results of the unfolded likelihood fit using da
 
 \begin{figure}[ht]
   \centering
-  \subfloat[]{\includegraphics[width=0.45\textwidth]{figures/diff_xsec/dilep_tty_total/post_fit/tty2l_pt_all_syst/Plots/SR1_postFit.pdf}}
+  \subfloat[]{\includegraphics[width=0.30\textwidth]{figures/diff_xsec/dilep_tty_total/post_fit/tty2l_pt_all_syst/Plots/SR1_postFit.pdf}}
   \quad\quad
-  \subfloat[]{\includegraphics[width=0.45\textwidth]{figures/diff_xsec/dilep_tty_total/post_fit/tty2l_pt_all_syst/Plots/SR2_postFit.pdf}}
+  \subfloat[]{\includegraphics[width=0.30\textwidth]{figures/diff_xsec/dilep_tty_total/post_fit/tty2l_pt_all_syst/Plots/SR2_postFit.pdf}}
   \caption{The post-fit distributions of $p_T(\gamma)$ in two regions (based on the cut on the Neural Network output) (a) $O_{NN}>=0.6$ (b) $O_{NN}<0.6$ 
   in dilepton channel.}
   \label{fig:pt_postfit_dilep_tty_total_realdata}
@@ -949,23 +983,23 @@ In this section, we will present results of the unfolded likelihood fit using da
 \begin{figure}[ht]
   \centering
   \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/ljet_tty_total_mu_blinded/Ranking/tty1l_pt_all_syst/Ranking_tty_pt_Bin_001_mu.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/ljet_tty_total_mu_blinded/Ranking/tty1l_pt_all_syst/Ranking_tty_pt_Bin_002_mu.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/ljet_tty_total_mu_blinded/Ranking/tty1l_pt_all_syst/Ranking_tty_pt_Bin_003_mu.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/ljet_tty_total_mu_blinded/Ranking/tty1l_pt_all_syst/Ranking_tty_pt_Bin_004_mu.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/ljet_tty_total_mu_blinded/Ranking/tty1l_pt_all_syst/Ranking_tty_pt_Bin_005_mu.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/ljet_tty_total_mu_blinded/Ranking/tty1l_pt_all_syst/Ranking_tty_pt_Bin_006_mu.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/ljet_tty_total_mu_blinded/Ranking/tty1l_pt_all_syst/Ranking_tty_pt_Bin_007_mu.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/ljet_tty_total_mu_blinded/Ranking/tty1l_pt_all_syst/Ranking_tty_pt_Bin_008_mu.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/ljet_tty_total_mu_blinded/Ranking/tty1l_pt_all_syst/Ranking_tty_pt_Bin_009_mu.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/ljet_tty_total_mu_blinded/Ranking/tty1l_pt_all_syst/Ranking_tty_pt_Bin_010_mu.pdf}}
 
   \caption{Ranking plots of the 10 NPs with the largest impact on the \tty (total) singal strength in each bin of the $p_T(\gamma)$ distribution in the single 
@@ -979,17 +1013,17 @@ In this section, we will present results of the unfolded likelihood fit using da
 
 \begin{figure}[ht]
   \centering
-  \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty2l_pt_all_syst_Bin_001_mu.pdf}}
-  \quad \quad
-  \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty2l_pt_all_syst_Bin_002_mu.pdf}}
-  \quad \quad
-  \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty2l_pt_all_syst_Bin_003_mu.pdf}}
-  \quad \quad
-  \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty2l_pt_all_syst_Bin_004_mu.pdf}}
-  \quad \quad
-  \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty2l_pt_all_syst_Bin_005_mu.pdf}}
-  \quad \quad
-  \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty2l_pt_all_syst_Bin_006_mu.pdf}}
+  \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty2l_pt_all_syst_Bin_001_mu.pdf}}
+  \quad
+  \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty2l_pt_all_syst_Bin_002_mu.pdf}}
+  \quad
+  \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty2l_pt_all_syst_Bin_003_mu.pdf}}
+  \quad
+  \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty2l_pt_all_syst_Bin_004_mu.pdf}}
+  \quad
+  \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty2l_pt_all_syst_Bin_005_mu.pdf}}
+  \quad
+  \subfloat[]{\includegraphics[width=0.2\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Ranking/tty2l_pt_all_syst/Ranking_tty2l_pt_all_syst_Bin_006_mu.pdf}}
   \caption{Ranking plots of the 10 NPs with the largest impact on the \tty (total) signal strength in each bin of the $p_T(\gamma)$ distribution in the dilepton channel. 
   The fit was performed to the data keeping the POIs blinded. Each subfigure, labeled (a), (b), (c), (d), (e), and (f), corresponds to a specific bin 
   of the $p_T(\gamma)$ distribution, with bin 1 (lowest \pt) represented in subfigure (a), bin 2 represented in 
@@ -1065,15 +1099,15 @@ In this section, we will present results of the unfolded likelihood fit using da
 \begin{figure}[ht]
   \centering
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet_tty_total_mu_blinded/Unfolded_data/tty1l_pt_all_syst/NormFactors.pdf}}
-  \quad\quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet_tty_total_mu_blinded/Unfolded_data/tty1l_eta_all_syst/NormFactors.pdf}}
-  \quad\quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet_tty_total_mu_blinded/Unfolded_data/tty1l_dr_all_syst/NormFactors.pdf}}
-  \quad\quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet_tty_total_mu_blinded/Unfolded_data/tty1l_drphb_all_syst/NormFactors.pdf}}
-  \quad\quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet_tty_total_mu_blinded/Unfolded_data/tty1l_drlj_all_syst/NormFactors.pdf}}
-  \quad\quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet_tty_total_mu_blinded/Unfolded_data/tty1l_ptj1_all_syst/NormFactors.pdf}}
   \caption{For the $t\bar{t}\gamma(\mathrm{total})$ measurement, the figure displays the normalization factors obtained from the fit to the real dataset for the single 
   lepton channel for the following observables: (a) $p_T(\gamma)$, (b) $|\eta(\gamma|)$, 
@@ -1086,25 +1120,24 @@ In this section, we will present results of the unfolded likelihood fit using da
 \begin{figure}[ht]
   \centering
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Unfolded_data/tty2l_pt_all_syst/NormFactors.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Unfolded_data/tty2l_eta_all_syst/NormFactors.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Unfolded_data/tty2l_dr_all_syst/NormFactors.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Unfolded_data/tty2l_dr1_all_syst/NormFactors.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Unfolded_data/tty2l_dr2_all_syst/NormFactors.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Unfolded_data/tty2l_dEtall_all_syst/NormFactors.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Unfolded_data/tty2l_dPhill_all_syst/NormFactors.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Unfolded_data/tty2l_ptll_all_syst/NormFactors.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Unfolded_data/tty2l_drphb_all_syst/NormFactors.pdf}}
-  \quad \quad
+  \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Unfolded_data/tty2l_drlj_all_syst/NormFactors.pdf}}
-  \quad \quad
   \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep_tty_total_mu_blinded/Unfolded_data/tty2l_ptj1_all_syst/NormFactors.pdf}}
   \caption{For the $t\bar{t}\gamma(\mathrm{total})$ measurement, the figure displays the normalisation factors obtained from the fit to the reald dataset for the dilepton channel
   for the following observables: (a) $p_T(\gamma)$, (b) $|\eta(\gamma|)$, (c) $\Delta R_{min}(\gamma, l)$
@@ -1565,6 +1598,7 @@ This section presents the various tests that have been performed to test the val
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Unfolding Tests %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Closure Test}
+\label{sec:closure_test}
 
 The goal of a closure test is to ensure that the unfolding algorithm can accurately reconstruct the true underlying distribution of a dataset, even in the presence of measurement errors and other sources of uncertainty. This is a crucial step in ensuring that the final results are robust and reliable.
 
@@ -1641,6 +1675,7 @@ for the dilepton channel, a satisfactory closure test has been achieved. This me
 
 
 \subsection{Stress Test}
+\label{sec:stress_test}
 The stress test is performed in order to verify that the unfolding procedure is not biased to any specific shape of the particle level distribution. The particle-level and reconstruction-level distributions obtained from the nominal MC sample are reweighed, and then the reweighted reconstructed distribution is unfolded using the nominal inputs from the MC sample, and the unfolded results are compared to the corresponding particle level distribution. Different weights have been checked, the first one is by taking the observed difference at reconstruction level between data and MC as the following:
 
 $$ \mathrm{weight} = 1 + \mathrm{Y} \times \frac{\mathrm{data}_i - \mathrm{MC}_i}{\mathrm{data}_i} = 1 + Y \times \mathrm{Obs}, $$
