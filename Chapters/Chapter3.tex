@@ -4,14 +4,14 @@
 \label{Chapter3} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 This chapter focuses on the measurements of the differential cross-section of the $\textbf{\tty production}$ (where \ttbar is produced in association with a \photon) and $\textbf{inclusive \tty}$ process (where \photon can come from the top quark decay products). The measurement is performed in single lepton and dilepton final states of the \ttbar decay, in a single lepton channel one of the W bosons decays leptonically whereas in the dilepton channel both the W bosons decay leptonically (Tau decay from the W boson is not considered). The cross-sections are measured from the dataset containing proton-proton collision at a center-of-mass energy of 13 TeV collected by the ATLAS detector during its Run 2 phase (2015-2018). 
 
-The dataset contains all sorts of events. Our goal is to correctly measure the number of \tty events from the dataset from which we can measure the cross-section. A signal-enriched region is created with the \ttbar-like selection with a requirement of an additional high energetic photon, details of the selection mentioned in ~\cref{sec:event-selection}.  Other processes can enter our signal region by giving a similar final state signature. For example, \ttbar production events can enter our signal-enriched region where a photon originated from the parton shower and not during the hard scattering. 
+The dataset contains all sorts of events. Our goal is to correctly measure the number of \tty events from the dataset from which we can measure the cross-section. A signal-enriched region is created with the \ttbar-like selection with a requirement of an additional high energetic photon, details of the selection mentioned in \cref{sec:event-selection}.  Other processes can enter our signal region by giving a similar final state signature. For example, \ttbar production events can enter our signal-enriched region where a photon originated from the parton shower and not during the hard scattering. 
 
-MC simulation is used to model different signal and background processes. MC-simulated events are interfaced with detector simulation and then reconstructed using the same object reconstruction algorithm used in data. MC simulations are properly reweighted and scaled to the same luminosity of data, this can then be used to compare data and MC directly and understand the composition of processes predicted by SM in different phase space volumes. Details on the MC simulation are mentioned in Section ~\cref{sec:data-and-mc-simulations}. Details on the object reconstruction are mentioned in ~\cref{sec:trigger-object-event-selection}.
+MC simulation is used to model different signal and background processes. MC-simulated events are interfaced with detector simulation and then reconstructed using the same object reconstruction algorithm used in data. MC simulations are properly reweighted and scaled to the same luminosity of data, this can then be used to compare data and MC directly and understand the composition of processes predicted by SM in different phase space volumes. Details on the MC simulation are mentioned in \cref{sec:data-and-mc-simulations}. Details on the object reconstruction are mentioned in \cref{sec:trigger-object-event-selection}.
 
-ATLAS detector object reconstruction algorithm is not 100\% efficient. The reconstruction efficiency varies in different phase spaces. MC events are properly reweighted to take into account the object reconstruction efficiencies. Sometimes electrons can get mis-reconstructed as photon (we will be calling \efake), a slight mismodelling of this kind of event is still present even after correction of events using object reconstruction efficiencies. These \efake events in MC are corrected using a data-driven approach mentioned in Section ~\cref{sec:background-estimation-efake}. Also a slight mismodelling is observed between data and MC for the events in which photon originated from any hadron (we will be calling these events \hfake). The mismodelling in MC \hfake events are corrected using data-driven ABCD method mentioned in ~\cite{DiezPardos:2781712}. In data, events with final state lepton originating from other than W boson origin (fake lepton events) is estimated from the data using Matrix-method, mentioned in ~\cref{sec:background-estimation-lfake}. Estimated fake lepton events are used along with the signal and background simulated events to compare with data events. With this we have a signal region in which we can compare data with SM predicted signal and background processes (after correcting \efake, \hfake and non-prompt lepton events). In SM predicted processes uncertainty on cross-section is taken into account properly. Also uncertainty on estimation of \efake, \hfake and non-prompt lepton are estimated.
+ATLAS detector object reconstruction algorithm is not 100\% efficient. The reconstruction efficiency varies in different phase spaces. MC events are properly reweighted to take into account the object reconstruction efficiencies. Sometimes electrons can get mis-reconstructed as photon (we will be calling \efake), a slight mismodelling of this kind of event is still present even after correction of events using object reconstruction efficiencies. These \efake events in MC are corrected using a data-driven approach mentioned in \cref{sec:background-estimation-efake}. Also a slight mismodelling is observed between data and MC for the events in which photon originated from any hadron (we will be calling these events \hfake). The mismodelling in MC \hfake events are corrected using data-driven ABCD method mentioned in ~\cite{DiezPardos:2781712}. In data, events with final state lepton originating from other than W boson origin (fake lepton events) is estimated from the data using Matrix-method, mentioned in \cref{sec:background-estimation-lfake}. Estimated fake lepton events are used along with the signal and background simulated events to compare with data events. With this we have a signal region in which we can compare data with SM predicted signal and background processes (after correcting \efake, \hfake and non-prompt lepton events). In SM predicted processes uncertainty on cross-section is taken into account properly. Also uncertainty on estimation of \efake, \hfake and non-prompt lepton are estimated.
 
-A multi-class neural network is employed in data and in MC simulated events to create signal-enriched (SR) and background-enriched control regions (CRs). The differential cross-section is measured at particle level in a fiducial phase space with the definition mentioned in Section ~\cref{sec:fiducial-phase-space}. The differential cross-section is measured using the profile likelihood unfolding method (mentioned in Section ~\cref{sec:profile-likelihodd-unfolding}) for the observables listed in Table ~\cref{tab:listvariables}.
-Different sources of uncertainties have been incorporated to the likelihood model as Nuisance parameters (NP). Sources of uncertainties are mentioned in Section ~\cref{sec:sources-of-uncertainties}.
+A multi-class neural network is employed in data and in MC simulated events to create signal-enriched (SR) and background-enriched control regions (CRs). The differential cross-section is measured at particle level in a fiducial phase space with the definition mentioned in \cref{sec:fiducial-phase-space}. The differential cross-section is measured using the profile likelihood unfolding method (mentioned in \cref{sec:profile-likelihodd-unfolding}) for the observables listed in \cref{tab:listvariables}.
+Different sources of uncertainties have been incorporated to the likelihood model as Nuisance parameters (NP). Sources of uncertainties are mentioned in \cref{sec:sources-of-uncertainties}.
 
 
 %----------------------------------------------------------------------------------------
@@ -56,7 +56,7 @@ At the reconstruction level (detector level) processes are categorized based on 
 where $f$~runs over all final-state particles, and $m_f$ and $p_{T,f}$ are the rest mass and the transverse momentum of particle $f$, respectively. To avoid infrared and collinear singularities due to the photon radiation, kinematic cuts are applied on matrix-element level. Leptons and quarks at the ME level are required to have a minimum transverse momentum of \SI{20} GeV and \SI{1} GeV respectively. Photons are required to have a minimum transverse momentum of 15 GeV and isolated according to a smooth-cone isolation (Frixione Isolation~\cite{Frixione:1998jh}) criterion with $\delta_0=0.1$, $\epsilon_{\gamma}=0.1$ and $n=2$. The \tty production sample is normalised to the NLO cross section given by the MC simulation.
 
 \textbf{\ttbar+$\gamma$ from decay / \tty decay:}\\
-\ttbar+$\gamma$ from decay is simulated with \MGNLO[2.7.3]~\cite{Alwall:2014hca} as $2 \to 2$ LO \ttbar production followed by decay of top quarks at LO where either of the top decays with a photon. The ME calculation employed the \NNPDF[3.0nlo] set of PDFs~\cite{Ball:2014uwa}. The event generation is interfaced to \PYTHIA[8.240]~\cite{Sjostrand:2007gs} using the \emph{A14} set of tune parameters~\cite{ATL-PHYS-PUB-2014-021} and the \nnpdflo PDF set to model parton shower, hadronisation, fragmentation and underlying event. The decays of bottom and charm hadrons were simulated using the \EVTGEN[1.6.0] program~\cite{Lange:2001uf}. The renormalisation and factorisation scales are set at $H_{T}/2$ (~\cref{eq:HT}). The kinematic and isolation criteria at matrix element are exactly the same as of \tty production. Since the sample is only available at LO, an inclusive K-factor ($\sigma_{NLO}/\sigma_{LO}$) are calculated for the lepton+jets and dilepton channels. The $K$-factor of 1.5 was derived by comparing the normalisation of the sum of the NLO \tty production sample and the LO \tty decay sample with the normalisation of a LO inclusive $2 \to 7$ \tty sample corrected with the $K$-factor obtained in Ref.~\cite{TOPQ-2017-14} using the calculation described in Ref.~\cite{Melnikov:2011ta}. (Since the \tty decay sample corresponds to \ttbar events with a photon from the decay process, the $K$-factor was compared with the ratio of the \ttbar cross sections at NLO and LO obtained by generating 10$^3$ events using the default settings in \MGNLO and found to be compatible within uncertainties.)
+\ttbar+$\gamma$ from decay is simulated with \MGNLO[2.7.3]~\cite{Alwall:2014hca} as $2 \to 2$ LO \ttbar production followed by decay of top quarks at LO where either of the top decays with a photon. The ME calculation employed the \NNPDF[3.0nlo] set of PDFs~\cite{Ball:2014uwa}. The event generation is interfaced to \PYTHIA[8.240]~\cite{Sjostrand:2007gs} using the \emph{A14} set of tune parameters~\cite{ATL-PHYS-PUB-2014-021} and the \nnpdflo PDF set to model parton shower, hadronisation, fragmentation and underlying event. The decays of bottom and charm hadrons were simulated using the \EVTGEN[1.6.0] program~\cite{Lange:2001uf}. The renormalisation and factorisation scales are set at $H_{T}/2$ (\cref{eq:HT}). The kinematic and isolation criteria at matrix element are exactly the same as of \tty production. Since the sample is only available at LO, an inclusive K-factor ($\sigma_{NLO}/\sigma_{LO}$) are calculated for the lepton+jets and dilepton channels. The $K$-factor of 1.5 was derived by comparing the normalisation of the sum of the NLO \tty production sample and the LO \tty decay sample with the normalisation of a LO inclusive $2 \to 7$ \tty sample corrected with the $K$-factor obtained in Ref.~\cite{TOPQ-2017-14} using the calculation described in Ref.~\cite{Melnikov:2011ta}. (Since the \tty decay sample corresponds to \ttbar events with a photon from the decay process, the $K$-factor was compared with the ratio of the \ttbar cross sections at NLO and LO obtained by generating 10$^3$ events using the default settings in \MGNLO and found to be compatible within uncertainties.)
 
 
 \textbf{\tWy:}\\
@@ -278,9 +278,9 @@ Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat
 
 \section{Differential cross-section measurement}
 \label{sec:diff-xsec-measurement}
-The cross-section is measured differentially within a defined fiducial phase space volume (~\cref{sec:fiducial-phase-space}) at particle level focusing on the observables listed in Table ~\cref{tab:listvariables}. This measurement employs an unfolding technique which is essential for deriving the truth spectrum of an observable from its reconstructed counterpart. Unfolding is crucial for correcting the detector effects such as limited resolutions, efficiency and acceptance effects, making the results easier to compare with the theoretical predictions. For this purpose, we implement profile likelihood unfolding method, detailed in ~\cref{sec:profile-likelihodd-unfolding}. 
+The cross-section is measured differentially within a defined fiducial phase space volume (\cref{sec:fiducial-phase-space}) at particle level focusing on the observables listed in \cref{tab:listvariables}. This measurement employs an unfolding technique which is essential for deriving the truth spectrum of an observable from its reconstructed counterpart. Unfolding is crucial for correcting the detector effects such as limited resolutions, efficiency and acceptance effects, making the results easier to compare with the theoretical predictions. For this purpose, we implement profile likelihood unfolding method, detailed in \cref{sec:profile-likelihodd-unfolding}. 
 
-Ideally, a continuous functional dependence of the measurement would be preferable. However, the finite detector resolution prevents this. Consequently, we measure the cross-section in discrete bins. For more information on how the bins are chosen detailed in ~\cref{sec:choice-of-binning}.
+Ideally, a continuous functional dependence of the measurement would be preferable. However, the finite detector resolution prevents this. Consequently, we measure the cross-section in discrete bins. For more information on how the bins are chosen detailed in \cref{sec:choice-of-binning}.
 
 \begin{table}[ht]
 \caption{The differential cross sections for the l+jets and dilepton channels are measured for the following variables: }
@@ -314,17 +314,17 @@ Ideally, a continuous functional dependence of the measurement would be preferab
 \end{table}
 \FloatBarrier
 
-As detailed in section ~\cref{sec:profile-likelihodd-unfolding} truth distribution as well as the response matrices for the corresponding observable are needed as inputs for the unfolding. More details on how the truth distributions and response matrices are constructed are detailed in ~\cref{sec:inputs-for-unfolding}.
+As detailed in \cref{sec:profile-likelihodd-unfolding} truth distribution as well as the response matrices for the corresponding observable are needed as inputs for the unfolding. More details on how the truth distributions and response matrices are constructed are detailed in \cref{sec:inputs-for-unfolding}. \\
 
-Before the unfolding procedure is applied to the real dataset it is applied on the psuedo-data (MC) to validate the unfolding procedure. Here pseudo-data refers to the sum of all MC samples including signal and backgrounds. The unfolded pseudo-data is compared with the truth distribution of the signal, and a good closure is observed (more on closure test in ~\cref{sec:closure_test}). This validates that the unfolding procedure using response matrix and truth distribution is working as expected. The signal shape in data can be different than MC simulation, our unfolding using MC truth distribution and response matrix (which is derived from MC simulation) can create bias while measuring the signal from the data. Through stress test mentioned in ~\cref{sec:stress_test} we can validate that unfolding procedure is very robust and can handle the shape difference between data and MC. 
+Before the unfolding procedure is applied to the real data set various tests are performed beforehand on pseudo-data set. This approach validates the unfolding procedure and avoid any post-unfolding modifications to the model, which could introduce bias. Here pseudo-data refers to the sum of all MC samples including signal and backgrounds. Two tests are performed, closure test and stress test. In closure test the unfolded pseudo-data is compared with the truth distribution of the signal, and a good closure is observed (more on closure test in \cref{sec:closure_test}). This validates that the unfolding procedure using response matrix and truth distribution can correctly measure the signal from the dataset (in this case pseudo-dataset). The signal normalization and shape shape in real data can be different than in MC simulation. Unfolding using MC truth distribution and response matrix (which is derived from MC simulation) can introduce bias while measuring the signal from the real data. Stress test mentioned in \cref{sec:stress_test} validates that unfolding procedure is very robust and can measure the signal correctly from the data even if the shape of the signal present in data is different than in MC simulation. \\ 
 
-After the fit and unfolding is performed in the real dataset, the results are detailed in ~\cref{sec:tty_prod_measurement} and ~\cref{sec:tty_total_measurement} ~\cref{sec:tty_prod_sldl_measurement} for \tty production measurement, inclusive \tty measurement and \tty production measurement in a combined single lepton and dilepton channel respectively.
+After validating the unfolding procedure, fit and unfolding is performed to the real data set to measure the cross-section. The results are detailed in \cref{sec:tty_prod_measurement}, \cref{sec:tty_total_measurement} and \cref{sec:tty_prod_sldl_measurement} for \tty production measurement, inclusive \tty measurement and \tty production measurement in a combined single lepton and dilepton channel respectively.
 
 
 
 \subsection{Profile likelihood unfolding}
 \label{sec:profile-likelihodd-unfolding}
-The TRExFitter framework is used for the fitting and unfolding process. It utilizes standard profile likelihood fitting for unfolding~\cite{cls_3}. This method transforms the unfolding problem into a standard problem of fitting the normalization of distributions. By using the standard profile-likelihood machinery, the truth distribution on particle level with N bins is multiplied by a corresponding "response matrix" of size N x M, which includes the selection efficiency, migration matrix, and acceptance. This results in a distribution on the detector level with M bins. A normalization factor is assigned for each bin of the truth distribution. It is important to note that the normalization of these folded distributions on the detector level is identical to the normalization of the truth distribution. Therefore, by measuring the normalization factors for each bin of each folded distribution on the detector level, the normalization of the truth level is directly obtained, which is the ultimate goal of the unfolding process.
+The TRExFitter framework is used for the fitting and unfolding process. It utilizes standard profile likelihood fitting for unfolding~\cite{cls_3}. This method transforms the unfolding problem into a standard problem of fitting the normalization of distributions. By using the standard profile-likelihood machinery, the truth distribution on particle level with N bins is multiplied by a corresponding "response matrix" of size N x M, which includes the selection efficiency, migration matrix, and acceptance. This results in a distribution on the detector level with M bins. A normalization factor is assigned for each bin of the truth distribution, these factors are parameter of interests (POI). It is important to note that the normalization of these folded distributions on the detector level is identical to the normalization of the truth distribution. Therefore, by measuring the normalization factors for each bin of each folded distribution on the detector level, the normalization of the truth level is directly obtained, which is the ultimate goal of the unfolding process.
 
 The likelihood can be expressed as:
 \begin{equation}\label{eq:likelihodd-defn}
@@ -332,7 +332,7 @@ The likelihood can be expressed as:
 \end{equation}
 
 where, \textit{Region} refers to the different signal and control regions, \textit{Bins} refers to the bin of the reconstruction level 
-histogram, $n^{\mathrm{data}}_{b,c}$ is the data in bin \textit{b} and  region \textit{c}, $\vec{a}$ is auxiliary data (e.g. from CP group calibration measurement), $\nu_{b,c}$ is the expected total events in bin \textit{b} and channel \textit{c}. $\Vec{\theta}$ are the constrained nuisance parameter describing systematic uncertainties ~\cref{sec:sources-of-uncertainties}, $\vec{k}$ are the unconstrained parameters (e.g. POIs) and $c_p$ is constraint term (Gaussian or Poisson depending on the nature of the systematics)\\
+histogram, $n^{\mathrm{data}}_{b,c}$ is the data in bin \textit{b} and  region \textit{c}, $\vec{a}$ is auxiliary data (e.g. from CP group calibration measurement), $\nu_{b,c}$ is the expected total events in bin \textit{b} and channel \textit{c}. $\Vec{\theta}$ are the constrained nuisance parameter describing systematic uncertainties \cref{sec:sources-of-uncertainties}, $\vec{k}$ are the unconstrained parameters (e.g. POIs) and $c_p$ is constraint term (Gaussian or Poisson depending on the nature of the systematics)\\
 
 $\nu_{b,c}$ can be expressed as follows:
 
@@ -363,8 +363,7 @@ The unfolded $\pt(\gamma)$ distribution is used as input for the EFT measurement
 \label{sec:inputs-for-unfolding}
 As inputs to the unfolding, binned distribution of the observable at particle level as well as the reponse matrix are needed. Binned distribution at particle level are obtained after applying the particle level event selection outlined in Section~\ref{sec:event-selection}. These distributions are depicted in Figure~\ref{fig:folding_input_ljet} for the single lepton channel and in Figures~\ref{fig:folding_input_dilep1} for the dilepton channel. The bin content, represented by $T_{i}$, serves as input for the Likelihood function described in Section~\ref{eq:likelihodd-defn-1}.
 
-\textbf{Response Matrices:}
-The response matrix effectively translates particle level distribution to the reconstruction level distribution taking into account factors like selection efficiency, detector acceptance and migration of events to neighboring bins. Essentially, when response matrix is applied to the truth distribution it yields distribution at reconstruction level. Response matrix is constructed from particle level to each region in reconstruction level, resulting in 4 response matrices for single lepton channel and 2 for dilepton channel. Furthermore, reponse matrices are obtained for every systematic variation (as well as for theoretical uncertertainties which changes the distribution at reconstruction level). These matrices are derived from the migration matrix ($N_{r \cap t}$) of the reconstruction and truth level distribution of the corresponding variable and the corresponding truth and reconstructed distributions ($N_{r}$ and $N_{t}$):
+The \textbf{response matrix} effectively translates particle level distribution to the reconstruction level distribution taking into account factors like selection efficiency, detector acceptance and migration of events to neighboring bins. Essentially, when response matrix is applied to the truth distribution it yields distribution at reconstruction level. Response matrix is constructed from particle level to each region in reconstruction level, resulting in 4 response matrices for single lepton channel and 2 for dilepton channel. Furthermore, reponse matrices are obtained for every systematic variation (as well as for theoretical uncertertainties which changes the distribution at reconstruction level). These matrices are derived from the migration matrix ($N_{r \cap t}$) of the reconstruction and truth level distribution of the corresponding variable and the corresponding truth and reconstructed distributions ($N_{r}$ and $N_{t}$):
 \begin{align}
     \text{Response, } P_{r,t} = \frac{M_{\mathrm{r,t}} \times \epsilon_{t}}{f_{r}}\\
     = \frac{\frac{N_{r \cap t}}{\sum_{r} N_{r \cap t}} \times \frac{\sum_{r} N_{r \cap t}}{N_{t}}}{\frac{\sum_{t} N_{r \cap t}}{N_{r}}}\\
@@ -546,20 +545,19 @@ For illustration, the normalised migration matrices for $p_T(\gamma)$ in the dif
 \label{sec:tty_prod_measurement}
 %\textcolor{red}{To do: add results for inclusive \tty measurement (\tty production + decay), ongoing since the particle level information of \tty decay was missing until recently.}
 
-In this section, we will present results of the unfolded likelihood fit using data for the \tty production cross section measurement. After the fit, the resulting post-fit $p_T(\gamma)$ distribution are shown in Figure~\ref{fig:pt_postfit_ljet_realdata} for the single lepton channel and in Figure~\ref{fig:pt_postfit_dilep_realdata} for the dilepton channel. 
+This section presents the results of the unfolded likelihood fit to the real data for the \tty production cross section measurement. Profile likelihood unfolding method is performed to measure the cross-section from the data. %(at this point the profile likelihood unfolding shold be clear to the reader, ehcke that it is properly explaine in the section) 
+After the fit, the fitted values of the POIs are shown in \cref{fig:pt_unfolded_ljet_table_realdata} and \cref{fig:pt_unfolded_dilep_table_realdata} for single lepton channel and dilepton channel respectively. Using measured POIs, the post-fit distributions at reconstruction level are shown in \cref{fig:pt_postfit_ljet_realdata} for the single lepton channel and in \cref{fig:pt_postfit_dilep_realdata} for the dilepton channel. The distributions are only shown for the observable $p_T(\gamma)$, rest are shown in the Appendix [ToDo]. \\
 \\
-As mentioned earlier that the systematic uncertainties are taken into account as the nuisance parameter (NP) in the likelihood function. And they are kept constrained with Gaussian or Poisson function depending on the nature of the uncertainties.
+As mentioned earlier that the systematic uncertainties are taken into account as the nuisance parameter (NP) in the likelihood function and they are kept constrained with Gaussian or Poisson function depending on the nature of the uncertainties.
 % explain pull plot
-During the likelihood minimization, the shift in the fitted values for the NP are shown using the pull plot. A pull plot is a type of histogram used to visualize the difference between the measured values and the predicted values from a fit, normalized by the uncertainty. Each data point in a pull plot represents a particular parameter. The x-value of the data point is the "pull" value, calculated as (measured - predicted) / uncertainty. If the fit is perfect, the pull values should follow a standard normal distribution (mean of 0 and standard deviation of 1). This is because the difference between the measured and predicted values should be zero on average, and the normalization by the uncertainty should scale the distribution to have a standard deviation of 1. The pull plots are shown in Figure ~\ref{fig:pull_plot_pt_tty_dec_free_ljet_mu_blinded}, Figure ~\ref{fig:pull_plot_pt_tty_dec_free_dilep_mu_blinded_1}, ~\ref{fig:pull_plot_pt_tty_dec_free_dilep_mu_blinded_2}. 
+During the likelihood minimization, the shift in the fitted values for the NP are shown using the pull plot. Pull plot is used to visualize the difference between the measured values and the predicted values from a fit, normalized by the uncertainty. Each data point in a pull plot represents a particular NP. The x-value of the data point is the "pull" value, calculated as (measured - predicted) / uncertainty. If the fit is perfect, the pull values should follow a standard normal distribution (mean of 0 and standard deviation of 1). This is because the difference between the measured and predicted values should be zero on average, and the normalization by the uncertainty should scale the distribution to have a standard deviation of 1. The pull plots are shown in Figure ~\ref{fig:pull_plot_pt_tty_dec_free_ljet_mu_blinded}, Figure ~\ref{fig:pull_plot_pt_tty_dec_free_dilep_mu_blinded_1}, ~\ref{fig:pull_plot_pt_tty_dec_free_dilep_mu_blinded_2}. 
 \\
 
-The correlation is calculated among the parameter of interests (POIs) and the NPs shown in Figure ~\ref{fig:NP-corr_ljet_mu_blinded} and Figure ~\ref{fig:NP-corr_dilep_mu_blinded}, for the lepton+jets and dilepton channels, respectively. The post-fit value of all the NPs changed within 1 $\sigma$, with a large fraction of the NPs having very small pulls and constraints, which indicate that the fit is robust and not affected by any unexpected behavior of the NPs. Here constraint means that the pre-fit uncertainty for that parameter was overspecified,i.e., the actual post-fit uncertainty turned out to be smaller than the pre-fit estimate. \\
+The correlation is calculated among the POIs and the NPs shown in \cref{fig:NP-corr_ljet_mu_blinded} and in \cref{fig:NP-corr_dilep_mu_blinded}, for the single lepton and dilepton channels respectively. The post-fit value of all the NPs changed within 1 $\sigma$, with a large fraction of the NPs having very small pulls and constraints, which indicate that the fit is robust and not affected by any unexpected behavior of the NPs. Here constraint means that the pre-fit uncertainty for that parameter was overspecified,i.e., the actual post-fit uncertainty turned out to be smaller than the pre-fit estimate. \\
 
 Also the impact of the NPs on the measurement of the POIs are estimated using the Ranking plot. 
 % explain ranking plot
-The ranking plot shows the impact of the NPs on the measurement of the POIs. The impact is calculated by varying each NP by $\pm 1 \sigma$ while keeping others at the post-fit vale and measuring the change in the POIs.
-Ranking plots are shown in Figures ~\ref{fig:ranking_ljet_total} and ~\ref{fig:ranking_dilep_total} for single lepton and dilepton channels. 
-Furthermore the post-fitted values of the POIs (Norm Factors) are shown in Figures ~\ref{fig:pt_unfolded_ljet_table_realdata} and ~\ref{fig:pt_unfolded_dilep_table_realdata} for single lepton channel and dilepton channel respectively.  \\
+The ranking plot shows the impact of the NPs on the measurement of the POIs. The impact is calculated by varying each NP by $\pm 1 \sigma$ while keeping others at the post-fit vale and measuring the change in the POIs. Ranking plots are shown in Figures ~\ref{fig:ranking_ljet_total} and ~\ref{fig:ranking_dilep_total} for single lepton and dilepton channels. Furthermore the post-fitted values of the POIs (Norm Factors) are shown in Figures ~\ref{fig:pt_unfolded_ljet_table_realdata} and ~\ref{fig:pt_unfolded_dilep_table_realdata} for single lepton channel and dilepton channel respectively.  \\
 
 The unfolded distributions at particle level are shown in Figures ~\ref{fig:pt_unfolded_ljet_dist_realdata} and ~\ref{fig:pt_unfolded_dilep_dist_realdata_1} and ~\ref{fig:pt_unfolded_dilep_dist_realdata_2} for single lepton and dilepton channels. The normalized unfolded distributions are shown in Figures ~\ref{fig:tty_prod_diff_Ljets_norm} and ~\ref{fig:tty_prod_diff_DL1_norm} for single lepton and dilepton channels respectively. The decomposed uncertainties of the unfolded distributions for the absolute differential cross-sections are illustrated in Figures ~\ref{fig:tty_prod_diff_Ljets_groupedimpact} and ~\ref{fig:tty_prod_diff_DL1_groupedimpact}, ~\ref{fig:tty_prod_diff_DL2_groupedimpact} for single lepton channel and dilepton channel respectively. $\chi^2$/ndf and $p$-values between the measured absolute and normalised cross-sections of \tty production and the NLO \MGNLO simulations interfaced with \PYTHIA[8] and \HERWIG[7] are shown in Table ~\ref{tab:chi2_ttyprod}.
 
@@ -615,6 +613,8 @@ The unfolded distributions at particle level are shown in Figures ~\ref{fig:pt_u
 
 
 
+%% This is the old version of showing the whole pull plot. Below is the new way of showing the plot splitting in half for better visualization 
+\begin{comment}
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.20\textwidth]{figures/diff_xsec/ljet_tty_prod_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_pt_ptj1_eta/NuisPar_comp.pdf}
@@ -625,23 +625,38 @@ The unfolded distributions at particle level are shown in Figures ~\ref{fig:pt_u
   \label{fig:pull_plot_pt_tty_dec_free_ljet_mu_blinded}
 \end{figure}
 \FloatBarrier
+\end{comment}
 
 
 
 \begin{figure}[ht]
   \centering
-  \subfloat[Part 1]{\includegraphics[width=0.35\textwidth, viewport=0 400 130 800, clip]{figures/diff_xsec/dilep_tty_prod_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_pt_ptj1_ptll/NuisPar_comp.pdf}}
-  \quad 
-  \subfloat[Part 2]{\includegraphics[width=0.35\textwidth, viewport=0 0 130 400, clip]{figures/diff_xsec/dilep_tty_prod_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_pt_ptj1_ptll/NuisPar_comp.pdf}}
-  \vspace{0.5cm}
-  \label{fig:split_pdf}
+  \subfloat[Part 1]{\includegraphics[width=0.40\textwidth, viewport=0 375 150 750, clip]{figures/diff_xsec/dilep_tty_prod_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_pt_ptj1_ptll/NuisPar_comp.pdf}}
+  \quad
+  \subfloat[Part 2]{\includegraphics[width=0.40\textwidth, viewport=0 0 150 375, clip]{figures/diff_xsec/dilep_tty_prod_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_pt_ptj1_ptll/NuisPar_comp.pdf}}
+  %\vspace{0.5cm}
+  \caption{Pull plots obtained from the fit to the data for the l+jet channel, for the \tty (prod.) measurement 
+  with the \tty (decay) parameter left as a free variable.}
+  \label{fig:pull_plot_pt_tty_dec_free_ljet_mu_blinded}
 \end{figure}
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.22\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_pt_ptj1_ptll/NuisPar_comp.pdf}
-  \quad \quad
-  \includegraphics[width=0.22\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_dr_dr1_dr2/NuisPar_comp.pdf}
+  \subfloat[Part 3]{\includegraphics[width=0.40\textwidth, viewport=0 375 150 750, clip]{figures/diff_xsec/dilep_tty_prod_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_dr_dr1_dr2/NuisPar_comp.pdf}}
+  \quad
+  \subfloat[Part 4]{\includegraphics[width=0.40\textwidth, viewport=0 0 150 375, clip]{figures/diff_xsec/dilep_tty_prod_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_dr_dr1_dr2/NuisPar_comp.pdf}}
+  \caption{Pull plots obtained from the fit to the data for the l+jet channel, for the \tty (prod.) measurement 
+  with the \tty (decay) parameter left as a free variable.}
+  \label{fig:pull_plot_pt_tty_dec_free_ljet_mu_blinded}
+
+\end{figure}
+
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.35\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_pt_ptj1_ptll/NuisPar_comp.pdf}
+  \quad \quad 
+  \includegraphics[width=0.35\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_dr_dr1_dr2/NuisPar_comp.pdf}
   %\includegraphics[width=0.32\textwidth]{figures/diff_xsec/dilep/Unfolded_data_tty_dec_free_mu_blinded/compare_NP_dilep_fits_pt_ptj1_ptll/NuisPar_Theory.pdf}
   \caption{Pull plots obtained from the fit to the data for the dilepton channel, for the \tty (prod.) measurement
   with the \tty (decay) parameter left as a free variable.}
@@ -651,9 +666,9 @@ The unfolded distributions at particle level are shown in Figures ~\ref{fig:pt_u
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.22\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_detall_dphill_eta/NuisPar_comp.pdf}
+  \includegraphics[width=0.35\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_detall_dphill_eta/NuisPar_comp.pdf}
   \quad \quad
-  \includegraphics[width=0.22\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_drphb_drlj/NuisPar_comp.pdf}
+  \includegraphics[width=0.35\textwidth]{figures/diff_xsec/dilep_tty_prod_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_drphb_drlj/NuisPar_comp.pdf}
   \caption{Pull plots obtained from the fit to the data for the dilepton channel, for the \tty (prod.) measurement
   with the \tty (decay) parameter left as a free variable.}
   \label{fig:pull_plot_pt_tty_dec_free_dilep_mu_blinded_2}
@@ -906,16 +921,31 @@ The unfolded distributions at particle level are shown in Figures ~\ref{fig:pt_u
   in dilepton channel.}
   \label{fig:pt_postfit_dilep_tty_total_realdata}
 \end{figure}
-\
+
+
 
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.20\textwidth]{figures/diff_xsec/ljet_tty_total_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_drphb_drlj_dr/NuisPar_comp.pdf}
-  \quad \quad
-  \includegraphics[width=0.20\textwidth]{figures/diff_xsec/ljet_tty_total_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_pt_ptj1_eta/NuisPar_comp.pdf}
+  \subfloat[Part 1]{\includegraphics[width=0.40\textwidth, viewport=0 375 150 750, clip]{figures/diff_xsec/ljet_tty_total_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_drphb_drlj_dr/NuisPar_comp.pdf}}
+  \quad
+  \subfloat[Part 1]{\includegraphics[width=0.40\textwidth, viewport=0 0 150 375, clip]{figures/diff_xsec/ljet_tty_total_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_drphb_drlj_dr/NuisPar_comp.pdf}}
+  %\vspace{0.5cm}
   \caption{Pull plots obtained from the fit to the data for the single lepton channel, for the \tty (total) measurement.}
   \label{fig:pull_plot_pt_ljet_mu_blinded_tty_total}
+
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[ht]
+  \centering
+  \subfloat[Part 1]{\includegraphics[width=0.40\textwidth, viewport=0 375 150 750, clip]{figures/diff_xsec/ljet_tty_total_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_pt_ptj1_eta/NuisPar_comp.pdf}}
+  \quad
+  \subfloat[Part 1]{\includegraphics[width=0.40\textwidth, viewport=0 0 150 375, clip]{figures/diff_xsec/ljet_tty_total_mu_blinded/compare_NP_pulls/compare_NP_dilep_fits_pt_ptj1_eta/NuisPar_comp.pdf}}
+  %\vspace{0.5cm}
+  \caption{Pull plots obtained from the fit to the data for the single lepton channel, for the \tty (total) measurement.}
+  \label{fig:pull_plot_pt_ljet_mu_blinded_tty_total}
+
 \end{figure}
 \FloatBarrier
 
@@ -1707,7 +1737,7 @@ single lepton channel and in Figures ~\ref{fig:unfolded_dilep_dist_stress_test_1
   \quad\quad
   \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/ljet/Unfolding_tests/Stress_test/tty1l_drlj_all_stat.pdf}}
   \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/ljet/Unfolding_tests/Stress_test/tty1l_ptj1_all_stat.pdf}}
-  \caption{Stress test for the five observables in the single lepton channel. Both the dots and lines are ratios made with respect to the nominal particle level.The dots are the ratio of the unfolded reweighted distributions to the nominal particle level distribution, while the solid lines are the ratio of the reweighted particle level distributions to the nominal one. X is defined in previous section. The uncertainty bars displayed in the plots represent only he statistical error considered in the unfolding.}
+  \caption{Stress test for the five observables in the single lepton channel for \tty production measurement. Both the dots and lines are ratios made with respect to the nominal particle level.The dots are the ratio of the unfolded reweighted distributions to the nominal particle level distribution, while the solid lines are the ratio of the reweighted particle level distributions to the nominal one. X is defined in previous section. The uncertainty bars displayed in the plots represent only he statistical error considered in the unfolding.}
   \label{fig:unfolded_ljet_dist_stress_test}
 \end{figure}
 \FloatBarrier
@@ -1726,8 +1756,7 @@ single lepton channel and in Figures ~\ref{fig:unfolded_dilep_dist_stress_test_1
   \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep/Unfolding_tests/Stress_test/tty2l_dr2_all_stat.pdf}}
   \quad\quad
   \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep/Unfolding_tests/Stress_test/tty2l_dEtall_all_stat.pdf}}
-  \caption{Stress test for the five observables in the dilepton channel. Both the dots and lines are ratios made with respect to the nominal particle level.The dots are the ratio of the unfolded reweighted distributions to the nominal particle level distribution, while the solid lines are the ratio of the reweighted particle level distributions to the nominal one. X is defined in previous section. The uncertainty bars displayed in the plots represent only 
-  the statistical error considered in the unfolding.}
+  \caption{Stress test for the five observables in the dilepton channel for \tty production measurement. Both the dots and lines are ratios made with respect to the nominal particle level.The dots are the ratio of the unfolded reweighted distributions to the nominal particle level distribution, while the solid lines are the ratio of the reweighted particle level distributions to the nominal one. X is defined in previous section. The uncertainty bars displayed in the plots represent only the statistical error considered in the unfolding.}
   \label{fig:unfolded_dilep_dist_stress_test_1}
 \end{figure}
 
@@ -1743,8 +1772,7 @@ single lepton channel and in Figures ~\ref{fig:unfolded_dilep_dist_stress_test_1
   \quad\quad
   \subfloat[]{\includegraphics[width=0.4\textwidth]{figures/diff_xsec/dilep/Unfolding_tests/Stress_test/tty2l_ptj1_all_stat.pdf}}
   \quad\quad
-  \caption{Stress test for the five observables in the dilepton channel. Both the dots and lines are ratios made with respect to the nominal particle level.The dots are the ratio of the unfolded reweighted distributions to the nominal particle level distribution, while the solid lines are the ratio of the reweighted particle level distributions to the nominal one. X is defined in previous section. The uncertainty bars displayed in the plots represent only 
-  the statistical error considered in the unfolding.}
+  \caption{Stress test for the five observables in the dilepton channel for \tty production measurement. Both the dots and lines are ratios made with respect to the nominal particle level.The dots are the ratio of the unfolded reweighted distributions to the nominal particle level distribution, while the solid lines are the ratio of the reweighted particle level distributions to the nominal one. X is defined in previous section. The uncertainty bars displayed in the plots represent only the statistical error considered in the unfolding.}
 
   \label{fig:unfolded_dilep_dist_stress_test_2}
 \end{figure}
