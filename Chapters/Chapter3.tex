@@ -2,17 +2,6 @@
 
 \chapter{Measurement of the \tty cross-sections} % Main chapter title
 \label{Chapter3} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
-This chapter focuses on the measurements of the differential cross-section of the $\textbf{\tty production}$ (where \ttbar is produced in association with a \photon) and $\textbf{inclusive \tty}$ process (where \photon can come from the top quark decay products). The measurement is performed in single lepton and dilepton final states of the \ttbar decay, in a single lepton channel one of the W bosons decays leptonically whereas in the dilepton channel both the W bosons decay leptonically (Tau decay from the W boson is not considered). The cross-sections are measured from the dataset containing proton-proton collision at a center-of-mass energy of 13 TeV collected by the ATLAS detector during its Run 2 phase (2015-2018). 
-
-The dataset contains all sorts of events. Our goal is to correctly measure the number of \tty events from the dataset from which we can measure the cross-section. A signal-enriched region is created with the \ttbar-like selection with a requirement of an additional high energetic photon, details of the selection mentioned in \cref{sec:event-selection}.  Other processes can enter our signal region by giving a similar final state signature. For example, \ttbar production events can enter our signal-enriched region where a photon originated from the parton shower and not during the hard scattering. 
-
-MC simulation is used to model different signal and background processes. MC-simulated events are interfaced with detector simulation and then reconstructed using the same object reconstruction algorithm used in data. MC simulations are properly reweighted and scaled to the same luminosity of data, this can then be used to compare data and MC directly and understand the composition of processes predicted by SM in different phase space volumes. Details on the MC simulation are mentioned in \cref{sec:data-and-mc-simulations}. Details on the object reconstruction are mentioned in \cref{sec:trigger-object-event-selection}.
-
-ATLAS detector object reconstruction algorithm is not 100\% efficient. The reconstruction efficiency varies in different phase spaces. MC events are properly reweighted to take into account the object reconstruction efficiencies. Sometimes electrons can get mis-reconstructed as photon (we will be calling \efake), a slight mismodelling of this kind of event is still present even after correction of events using object reconstruction efficiencies. These \efake events in MC are corrected using a data-driven approach mentioned in \cref{sec:background-estimation-efake}. Also a slight mismodelling is observed between data and MC for the events in which photon originated from any hadron (we will be calling these events \hfake). The mismodelling in MC \hfake events are corrected using data-driven ABCD method mentioned in ~\cite{DiezPardos:2781712}. In data, events with final state lepton originating from other than W boson origin (fake lepton events) is estimated from the data using Matrix-method, mentioned in \cref{sec:background-estimation-lfake}. Estimated fake lepton events are used along with the signal and background simulated events to compare with data events. With this we have a signal region in which we can compare data with SM predicted signal and background processes (after correcting \efake, \hfake and non-prompt lepton events). In SM predicted processes uncertainty on cross-section is taken into account properly. Also uncertainty on estimation of \efake, \hfake and non-prompt lepton are estimated.
-
-A multi-class neural network is employed in data and in MC simulated events to create signal-enriched (SR) and background-enriched control regions (CRs). The differential cross-section is measured at particle level in a fiducial phase space with the definition mentioned in \cref{sec:fiducial-phase-space}. The differential cross-section is measured using the profile likelihood unfolding method (mentioned in \cref{sec:profile-likelihodd-unfolding}) for the observables listed in \cref{tab:listvariables}.
-Different sources of uncertainties have been incorporated to the likelihood model as Nuisance parameters (NP). Sources of uncertainties are mentioned in \cref{sec:sources-of-uncertainties}.
-
 
 %----------------------------------------------------------------------------------------
 %	SECTION 1
@@ -70,7 +59,7 @@ The samples are normalised to the cross-sections given by the corresponding Mont
 
 
 
-\section{Inclusive samples}
+\subsection{Inclusive samples}
 \label{sec:used-incl-sampl}
 \textbf{\ttbar production:}\\
 Inclusive \ttbar production processes are simulated on matrix-element level at next-to-leading order in QCD using \powhegbox{}-\textsc{v2}~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd}. The matrix-element generator is interfaced to \pythia{}8 (v8.230) to simulate parton shower, hadronisation, fragmentation and the underlying event. Heavy-flavour decays are modelled with \evtgen. The matrix-element calculation uses the \nnpdfnlo PDF set~\cite{Ball:2014uwa}, with the top-quark mass fixed to \SI{172.5}{\gev}. The internal parameter $h_{\text{damp}}$ to control the hardest real emission in \POWHEG is set to 1.5 times the top-quark mass following \atlas standards. The showering in \pythia uses the \emph{A14} tune in conjunction with the \nnpdflo PDF set. By applying a K-factor, the events are normalised to a cross-section value calculated with the \textsc{Top++2.0} programme at next-to-next-to-leading order in perturbative QCD, including soft-gluon resummation to next-to-next-to-leading-log (see \cite{Czakon:2011xx} and references therein), again assuming a top-quark mass of \SI{172.5}{\gev}. The resulting cross-section for \ttbar production at \sqrtsfull amounts to %$\sigma_{\ttbar} = \SI{831.76}{\pb}$. % with remaining theoretical scale uncertainties of approximately 3\%.
@@ -548,7 +537,7 @@ For illustration, the normalised migration matrices for $p_T(\gamma)$ in the dif
 This section presents the results of the unfolded likelihood fit to the real data for the \tty production cross section measurement. Profile likelihood unfolding method is performed to measure the cross-section from the data. %(at this point the profile likelihood unfolding shold be clear to the reader, ehcke that it is properly explaine in the section) 
 After the fit, the fitted values of the POIs are shown in \cref{fig:pt_unfolded_ljet_table_realdata} and \cref{fig:pt_unfolded_dilep_table_realdata} for single lepton channel and dilepton channel respectively. Using measured POIs, the post-fit distributions at reconstruction level are shown in \cref{fig:pt_postfit_ljet_realdata} for the single lepton channel and in \cref{fig:pt_postfit_dilep_realdata} for the dilepton channel. The distributions are only shown for the observable $p_T(\gamma)$, rest are shown in the Appendix [ToDo]. \\
 \\
-As mentioned earlier that the systematic uncertainties are taken into account as the nuisance parameter (NP) in the likelihood function and they are kept constrained with Gaussian or Poisson function depending on the nature of the uncertainties.
+As mentioned earlier that the systematic uncertainties are taken into account as the nuisance parameter (NP) in the likelihood function and they are kept constrained.
 % explain pull plot
 During the likelihood minimization, the shift in the fitted values for the NP are shown using the pull plot. Pull plot is used to visualize the difference between the measured values and the predicted values from a fit, normalized by the uncertainty. Each data point in a pull plot represents a particular NP. The x-value of the data point is the "pull" value, calculated as (measured - predicted) / uncertainty. If the fit is perfect, the pull values should follow a standard normal distribution (mean of 0 and standard deviation of 1). This is because the difference between the measured and predicted values should be zero on average, and the normalization by the uncertainty should scale the distribution to have a standard deviation of 1. The pull plots are shown in Figure ~\ref{fig:pull_plot_pt_tty_dec_free_ljet_mu_blinded}, Figure ~\ref{fig:pull_plot_pt_tty_dec_free_dilep_mu_blinded_1}, ~\ref{fig:pull_plot_pt_tty_dec_free_dilep_mu_blinded_2}. 
 \\
@@ -961,6 +950,7 @@ The unfolded distributions at particle level are shown in Figures ~\ref{fig:pt_u
 %  \label{fig:pull_plot_pt_dilep_mu_blinded_1_tty_total}
 %\end{figure}
 %\FloatBarrier
+
 
 \begin{figure}[ht]
   \centering
