@@ -1,0 +1,135 @@
+\section{Data set and event simulations}
+\label{sec:data-and-mc-simulations}
+%-----------------------------------
+%	SUBSECTION 1
+%-----------------------------------
+\subsection{Data set}
+
+The dataset used in the measurement contains the proton-proton collision data at center-of-mass energy 13 TeV collected by the ATLAS detector during its Run2 operation (2015-2018). In total, ATLAS recorded 140.1 $fb^{-1}$ of data which can be used for physics analysis \cite{Aad_2020}. The pileup events for different year is shown here.
+
+
+%-----------------------------------
+%	SUBSECTION 2
+%-----------------------------------
+
+\subsection{Signal and background simulations}
+%Recorded data are compared to simulated samples to compute the detector recon- struction efficiencies and acceptance, and to estimate the systematic uncertainties. Simulated samples are also used to evaluate the final contribution of the signal processes.
+Simulated events are used in almost all parts of the analysis, for example in measuring the signal efficiency and acceptance in different phase space, also in estimating the systematic uncertainties, also to estimate the final contribution of the signal and background process in the measurement region. Different event generators are used to simulate signal and background process mentioned in the table {table}. Simulation is done for each data-taking period to match the varying conditions of the ATLAS detector.
+Simulated events are then processed with \textsc{Geant4} to simulate the detector response {ref}. As full detector simulation is computationally expensive, for some of the samples, the fast-simulation package \textsc{AtlFast-II} is used, which speeds up the simulation {ref}. Additional p p interactions from the same bunch crossing are simulated as minimum-bias interactions using PYTHIA8 {ref} using the set of tuned parameters called A3 {ref} and the NNPDF2.3LO PDF set {ref}. These events are then superimposed on the hard-scattering events. MC events are later reweighted to match the pile-up conditions of the observed data. For that three different subcampaigns, \textit{mc16a, mc16d} and \textit{mc16e} are defined to reflect the data-taking conditions in 2015+16, 2017 and 2018 respectively.
+
+\textit{Dedicated} samples as well as \textit{inclusive} samples have been used in this analysis. Dedicated sample contains the photon emission at the matrix element level whereas in the inclusive sample, the photon emission is taken care of by the parton shower algorithms. Matrix element level calculation is more precise than the calculation in the parton shower. Dedicated samples are used for \tty production and \vgamma processes, for other processes inclusive samples are used. Phase space overlap removal procedure is applied between dedicated samples and inclusive samples to avoid any double counting of the events (detailed in Section). %~\ref{sec:sample-overlap-removal}).
+
+At the reconstruction level (detector level) processes are categorized based on the source of the photon, by doing the truth-matching procedure. The photon can come from the matrix element or from the parton showering or any other object can get mis-reconstructed as a photon. The categorization is mentioned in the Section %~\ref{sec:photon-categorisation}. The estimation of the mis-reconstructed photon from other object is mention in the Section %~\ref{sec:background-estimation}.
+
+\subsection{Dedicated samples}
+\label{sec:dedicated-samples}
+\textbf{\tty production:}\\
+\tty production is simulated with \MGNLO[2.7.3]~\cite{Alwall:2014hca} as a $2\to 3$ process at NLO QCD precision. The ME calculation employed the \NNPDF[3.0nlo] set of PDFs~\cite{Ball:2014uwa}. The event generation is interfaced to \PYTHIA[8.240]~\cite{Sjostrand:2007gs} using the \emph{A14} set of tune parameters~\cite{ATL-PHYS-PUB-2014-021} and the \nnpdflo PDF set to model parton shower, hadronisation, fragmentation and underlying event. Top quarks were decayed at LO using \MADSPIN~\cite{Frixione:2007zp,Artoisenet:2012st} to preserve spin correlations. The decays of bottom and charm hadrons were simulated using the \EVTGEN[1.6.0] program~\cite{Lange:2001uf}. The renormalisation and factorisation scales are dynamic and correspond to half of $H_{T}$, the sum over all \enquote{transverse masses} of all final-state particles:
+
+\begin{align}\label{eq:HT}
+  \mu_R = \mu_F = \frac{H_{T}}{2} \, , \quad 
+  H_{T} = \sum_f \sqrt{ m_f^2 + p_{T,f}^2 } \, ,
+\end{align}
+
+where $f$~runs over all final-state particles, and $m_f$ and $p_{T,f}$ are the rest mass and the transverse momentum of particle $f$, respectively. To avoid infrared and collinear singularities due to the photon radiation, kinematic cuts are applied on matrix-element level. Leptons and quarks at the ME level are required to have a minimum transverse momentum of \SI{20} GeV and \SI{1} GeV respectively. Photons are required to have a minimum transverse momentum of 15 GeV and isolated according to a smooth-cone isolation (Frixione Isolation~\cite{Frixione:1998jh}) criterion with $\delta_0=0.1$, $\epsilon_{\gamma}=0.1$ and $n=2$. The \tty production sample is normalised to the NLO cross section given by the MC simulation.
+
+\textbf{\ttbar+$\gamma$ from decay / \tty decay:}\\
+\ttbar+$\gamma$ from decay is simulated with \MGNLO[2.7.3]~\cite{Alwall:2014hca} as $2 \to 2$ LO \ttbar production followed by decay of top quarks at LO where either of the top decays with a photon. The ME calculation employed the \NNPDF[3.0nlo] set of PDFs~\cite{Ball:2014uwa}. The event generation is interfaced to \PYTHIA[8.240]~\cite{Sjostrand:2007gs} using the \emph{A14} set of tune parameters~\cite{ATL-PHYS-PUB-2014-021} and the \nnpdflo PDF set to model parton shower, hadronisation, fragmentation and underlying event. The decays of bottom and charm hadrons were simulated using the \EVTGEN[1.6.0] program~\cite{Lange:2001uf}. The renormalisation and factorisation scales are set at $H_{T}/2$ (\cref{eq:HT}). The kinematic and isolation criteria at matrix element are exactly the same as of \tty production. Since the sample is only available at LO, an inclusive K-factor ($\sigma_{NLO}/\sigma_{LO}$) are calculated for the lepton+jets and dilepton channels. The $K$-factor of 1.5 was derived by comparing the normalisation of the sum of the NLO \tty production sample and the LO \tty decay sample with the normalisation of a LO inclusive $2 \to 7$ \tty sample corrected with the $K$-factor obtained in Ref.~\cite{TOPQ-2017-14} using the calculation described in Ref.~\cite{Melnikov:2011ta}. (Since the \tty decay sample corresponds to \ttbar events with a photon from the decay process, the $K$-factor was compared with the ratio of the \ttbar cross sections at NLO and LO obtained by generating 10$^3$ events using the default settings in \MGNLO and found to be compatible within uncertainties.)
+
+
+\textbf{\tWy:}\\
+Two tW samples with different photon source, i.e, production and decay are considered for the \tWy process using \MGNLO[2.7.3]~\cite{Alwall:2014hca} at LO with 5 flavour scheme of partons. The event generation is interfaced to \PYTHIA[8.240]~\cite{Sjostrand:2007gs} using the \emph{A14} set of tune parameters~\cite{ATL-PHYS-PUB-2014-021} and the \nnpdflo PDF set to model parton shower, hadronisation, fragmentation and underlying event. The decays of bottom and charm hadrons were simulated using the \EVTGEN[1.6.0] program~\cite{Lange:2001uf}. The renormalisation and factorisation scales are set at $H_{T}/2$ (\cref{eq:HT}). %Since \tWy process, even at NLO QCD should not contribute to the charge asymmetry, a LO dedicated \tWy process sample can be used as nominal in the absence of a dedicated NLO sample.
+
+
+
+\textbf{W$\gamma$/Z$\gamma$:} \\
+Events with $W\gamma$~and $Z\gamma$~final states (with additional jets) are simulated in dedicated samples. Both processes are simulated with \sherpa 2.2.8~\cite{Gleisberg:2008ta,Hoeche:2009rj} at next-to-leading order in QCD using the \nnpdfnnlo PDF set. %, whereas $Z\gamma$ events are generated with \sherpa 2.2.4 at leading order in QCD. 
+The samples are normalised to the cross-sections given by the corresponding Monte Carlo simulation. The simulation includes all steps of the event generation, from the hard process to the observable particles. All samples are matched and merged to the \sherpa-internal parton showering based on Catani-Seymour dipoles~\cite{Gleisberg:2008fv,Schumann:2007mg} using the MEPS@NLO prescription~\cite{Hoeche:2011fd,Catani:2001cc,Hoeche:2012yf}. Virtual corrections for the next-to-leading order accuracy in QCD in the matrix element are provided by the OpenLoops library~\cite{Cascioli:2011va,Denner:2016kdg}.
+
+
+
+\subsection{Inclusive samples}
+\label{sec:used-incl-sampl}
+\textbf{\ttbar production:}\\
+Inclusive \ttbar production processes are simulated on matrix-element level at next-to-leading order in QCD using \powhegbox{}-\textsc{v2}~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd}. The matrix-element generator is interfaced to \pythia{}8 (v8.230) to simulate parton shower, hadronisation, fragmentation and the underlying event. Heavy-flavour decays are modelled with \evtgen. The matrix-element calculation uses the \nnpdfnlo PDF set~\cite{Ball:2014uwa}, with the top-quark mass fixed to \SI{172.5}{\gev}. The internal parameter $h_{\text{damp}}$ to control the hardest real emission in \POWHEG is set to 1.5 times the top-quark mass following \atlas standards. The showering in \pythia uses the \emph{A14} tune in conjunction with the \nnpdflo PDF set. By applying a K-factor, the events are normalised to a cross-section value calculated with the \textsc{Top++2.0} programme at next-to-next-to-leading order in perturbative QCD, including soft-gluon resummation to next-to-next-to-leading-log (see \cite{Czakon:2011xx} and references therein), again assuming a top-quark mass of \SI{172.5}{\gev}. The resulting cross-section for \ttbar production at \sqrtsfull amounts to %$\sigma_{\ttbar} = \SI{831.76}{\pb}$. % with remaining theoretical scale uncertainties of approximately 3\%.
+
+\textbf{Single top:}\\
+Single-top-quark processes are modelled separately for the three $s$- and $t$-channel production mode and $tW$ production, 
+each of which are generated separately for top-quark and anti-top-quark production. The three production modes are simulated on matrix-element level at next-to-leading order in QCD with \powhegbox and the \nnpdflo PDF set. The matrix-element generator is interfaced to \pythia{}8 (v8.230) with the \emph{A14} tune as before. Again, heavy-flavour decays are modelled with \evtgen. The sample cross-sections are normalised to next-to-next-to-leading-order precision or approximate NNLO using K-factors~\cite{Kidonakis:2010tc,Kidonakis:2010ux,Kidonakis:2011wy}. 
+
+\textbf{W/Z+jets:}\\
+Events with $W$~and $Z$~bosons in association with additional jets are simulated with \sherpa 2.2.1 at next-to-leading order in QCD. The simulation includes the hard-scattering event as well as hadronisation. The \nnpdfnlo PDF set is used in conjunction with a dedicated tune provided by the \sherpa authors. The samples are normalised to the next-to-next-to-leading-order cross-section in QCD~\cite{ATLAS-CONF-2015-039}.
+
+\textbf{Diboson:}\\
+Events with two vector bosons, that is $\mathit{WW}$, $\mathit{WZ}$ and $\mathit{ZZ}$, are generated with \sherpa versions 2.2.2 (purely leptonic decays) and 2.2.1 (all others) at NLO in QCD. The \nnpdfnnlo PDF set is used in conjunction with a dedicated tune provided by the \sherpa authors. The samples are normalised to next-to-leading order cross-sections in QCD~\cite{Campbell:1999ah}.
+
+\textbf{\ttbar+W/Z:}\\
+Events with a \ttbar pair and an associated $W$~or $Z$~boson ($t\bar{t}V$) are simulated at next-to-leading order in QCD on matrix-element level with \madgraph using the \nnpdfnlo PDF set.
+The matrix-element generator is interfaced to \pythia{}8 (v8.210), for which the \emph{A14} tune is used in conjunction with the \nnpdflo PDF set.
+The samples are normalised to next-to-leading order in both QCD and electroweak theory~\cite{deFlorian:2016spz}.
+
+
+\subsection{Sample-overlap removal procedure}
+\label{sec:sample-overlap-removal}
+% reference Knut's thesis, John's thesis, Amartya's thesis
+
+% We have dedicated samples in which the photon is emitted at the matrix-element level, this gives better accuracy in 
+
+Because events with photons outside the kinematic requirements of the dedicated $X\gamma$~samples are not simulated in these samples, they are to be taken from the inclusive $X$~samples.
+Although no photons are generated on matrix-element level in the inclusive samples, radiation of extra photons is still accounted for by the showering algorithm.
+This includes simulation of photon radiation from both initial-state and final-state objects.
+For example, if inclusive \ttbar production is generated in the matrix element including decays of the top quarks and $W$ bosons, the simulation of the parton shower includes radiative photons from any of the charged final-state products, such as leptons from the $W$~boson decay.
+If that particular \ttbar event was simulated through quark-antiquark annihilation, radiative photons may also arise from the quarks in the initial state.
+Hence, events in inclusive samples, where a photon was generated by the showering algorithm, pose a danger of double-counting if a dedicated sample is used simultaneously.
+
+As a consequence, a sample-overlap removal procedure is performed between inclusive $X$~and dedicated $X\gamma$ samples.
+In particular, the removal procedure is applied for simulations of \ttbar~and \tty~events, \tWy, $W$+jets~and $W\gamma$~events, and for $Z$+jets~and $Z\gamma$~events.
+The recipe for the removal is (1) to accept all events from the $X\gamma$~samples, since the photon radiation simulated on matrix-element level comes with higher accuracy than the radiation accounted for in the showering algorithm.
+In addition, the generated number of events for phase-space areas covered by both inclusive and dedicated samples is by far larger for the latter.
+And (2) to remove events from the $X$~samples if they overlap with the $X\gamma$ simulation.
+However, removing \emph{all} events with radiative photons from the $X$~samples would be too strict as the $X\gamma$~samples apply cuts on the kinematics of the matrix-element photon.
+
+The sample-overlap removal procedure is implemented with the central algorithm
+\emph{VGammaORTool}%
+\footnote{\url{https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/VGammaORTool}}.
+The algorithm is initialised with a definition of the overlap region, which corresponds to the set of cuts applied to the $X\gamma$ samples on matrix-element level.
+For all three overlapping sample types, these cuts are:
+%
+\begin{enumerate}
+\item $\pT (\gamma) > \SI{15}{\GeV}$ and
+\item $\Delta R(\ell, \gamma) > 0.2$.
+\end{enumerate}
+%
+%where $\Delta R := \sqrt{ \Delta \phi^2 + \Delta \eta^2}$ in the ATLAS coordinate system.
+To check whether an event falls into the overlap region defined by the above cuts, the algorithm first compiles candidate lists to find all photons and leptons generated on matrix-element level.
+Photons get added to the candidate list if they fulfil all of the following criteria:
+%
+\begin{enumerate}
+\item PDG ID $= 22$, i.e. the particle truly is a photon.
+\item Status $= 1$ to only consider stable final-state particles.
+\item $\pT > \SI{3}{\GeV}$.
+\item Barcode $< \num{100000}$ to only consider primary particles from the generator and not from the detector simulation.
+\item MCTruthClassifier::origin $\notin [23, 35]$, that is, no photons originating from baryons or mesons, and neither 9 (photons from \tauleptons) nor 42 (photons from $\pi^0$).
+\end{enumerate}
+%
+In particular the last two criteria ensure that the photon does not originate from interaction with the detector and/or hadronic activity.
+For the last point \emph{MCTruthClassifier} information provided by the central ATLAS software is used%
+\footnote{\url{https://twiki.cern.ch/twiki/bin/view/AtlasProtected/MCTruthClassifier}}.
+Leptons get added to the candidate list if they fulfil all of the following criteria:
+%
+\begin{enumerate}
+\item PDG ID $= \pm 11$ (electron), $\pm 13$ (muon), $\pm 15$ (\taulepton).
+\item barcode $< \num{100000}$.
+\item If \taulepton, none of the children must be a \taulepton. This ensures to only consider the\tauleptons before decays (the last \taulepton in the decay chain).
+\item If electron or muon, its parent particle must not be a \taulepton. In addition, require status $= 1$.
+\item MCTruthClassifier::origin $\notin [23, 42]$, that is, no photons from a hadron or any kind of radiated photon, and $\notin [5, 9]$ (from photon conversion or \taulepton) and not 3 (single photon).
+\end{enumerate}
+%
+After the lists are compiled, all photon candidates are checked against the above $\pT(\gamma) > \SI{15}{\GeV}$ criterion.
+For the remaining photon candidates, $\Delta R(\ell,\gamma) > 0.2$ is tested with all electron candidates, and the photon candidate is discarded as soon as it overlaps with one electron candidate.
+If any of the photon candidates of the event pass both \pT and $\Delta R$ requirement, the event is considered to \emph{fall into the overlap region}.
+Events from inclusive $X$~samples, that is, \ttbar, $tW$, $W$+jets and $Z$+jets, are \emph{vetoed} if they fall into the overlap region. This overlap region is large and the fraction of events that are kept (the non-overlap region) corresponds roughly to less than 5\% of the total number of selected events.% for their corresponding X$\gamma$ samples. 
+
+
+
+

@@ -1,0 +1,84 @@
+
+\section{Categorisation of photons}
+\label{sec:photon-categorisation}
+
+The main interest of this analysis are \ttbar events where an additional photon is generated in the hard-scattering event, also called a \emph{prompt} photon.
+However, photons can occur at many other stages of what is being recorded as an \enquote{event} with the ATLAS detector.
+In addition, other particles and activities in the detector may fake photon signatures and be identified as such.
+Among the photon candidates detected and reconstructed with the ATLAS detector, this analysis distinguishes three classes:
+%
+\begin{enumerate}
+\item Prompt photons originating from the hard-scattering event.
+\item Electron-fake photons, in the following denoted as \emph{\efakes}, which are electrons faking a photon signature in the calorimeter.
+\item Non-prompt photons originating from hadrons, for example $\pi^0 \to \gamma\gamma$ decays, and photon signatures faked by hadronic energy depositions in the calorimeter are considered in one category, referred to as hadron-fake photons, in the following denoted as \emph{\hfakes}.
+\end{enumerate}
+%
+To assess and estimate contributions to these three classes in simulation, \emph{MCTruthClassifier} information is used to identify the origin of a reconstructed photon candidate.
+For this, the \texttt{xAOD::TruthHelpers} class is used to retrieve the truth object $\gamma_{\mathrm{truth}}^{\mathrm{cand}}$ associated to the photon candidate.
+Then, according to the MCTruthClassifier::origin and MCTruthClassifier::truth values of that truth object, the photon candidate is classified into one of the three categories above.
+To classify a candidate as \efake, \emph{any} of the following criteria must be fulfilled:
+%
+\begin{itemize}
+\item PDG ID $= \pm 11$ (electron)
+\item $\Delta R (\gamma_{\mathrm{truth}}^{\mathrm{cand}}, e_{\mathrm{truth}}) < 0.1$, where $e$ denotes a truth electron.
+  Similar to \cref{sec:sample-overlap-removal}, a list of truth electrons is compiled and $\gamma_{\mathrm{truth}}^{\mathrm{cand}}$ must not overlap with any of them.
+The truth-electron criteria are:
+  \begin{enumerate}
+  \item PDG ID $= \pm 11$
+  \item $\pT > \SI{10}{\GeV}$
+  \item $|\eta| < 3.0$
+  \item barcode $< \num{100000}$
+  \end{enumerate}
+\end{itemize}
+%
+To avoid any possible double-classification, all photon candidates that match either of the two above \efake criteria, are categorised as such and \emph{not examined further}.
+For all remaining candidates, if $\gamma_{\mathrm{truth}}^{\mathrm{cand}}$ meets any of the following criteria, the candidate is classified as \hfake:
+%
+\begin{itemize}
+\item MCTruthClassifier::type $= 16$ and MCTruthClassifier::origin $\in [23, 35]$.
+These are photons of type \emph{background photon} originating from baryons or mesons.
+\item MCTruthClassifier::type $= 16$ and MCTruthClassifier::origin $= 42$. These are photons of type \emph{background photon} originating from $\pi^0 \to \gamma\gamma$ decays.
+\item MCTruthClassifier::type $= 17$, corresponding to hadronic energy deposition.
+\end{itemize}
+%
+If the photon candidate classifies as neither \efake nor \hfake, it is treated as prompt.
+
+
+\subsection{Grouping of processes}
+%\label{sec:process-grouping}
+
+For the convenience of the analysis the signal and background processes are grouped according to the needs as shown in the Table \ref{tab:process-grouping}. 
+
+\begin{table}[hp]
+  \centering
+  \caption{The grouping of processes}
+  \label{tab:process-grouping}
+  \scriptsize
+  \begin{tabular}{ll}
+    \toprule
+    Groups & Processes \\
+    \midrule
+     & Prompt $\gamma$ from\\
+    \tty prod (sig) & \tty production\\
+    \tty decay & \tty decay \\
+    $Wt\gamma$& $Wt\gamma$\\
+    & $Wt$ (non-overlapped region)\\
+    Prompt $\gamma$ & Di-boson(+$\gamma$) \\
+    & \ttbar(+$\gamma$) (non-overlapped region) \\
+    & $t\bar{t}W$(+$\gamma$), $t\bar{t}Z$(+$\gamma$) \\
+    & Z$\gamma$ \\
+    & W$\gamma$ \\
+    & Z+jets(+$\gamma$) (non-overlap region) \\
+    & W+jets(+$\gamma$) (non-overlap region) \\
+    & single top (+$\gamma$) [s,t] \\
+    & \\
+    \hfake $\gamma$ & Hadron fake $\gamma$ from all processes\\
+    & \\
+    \efake $\gamma$ & Electron fake $\gamma$ from all processes\\
+    Lepton fake & Events with fake leptons from all processes\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\FloatBarrier
+
+
