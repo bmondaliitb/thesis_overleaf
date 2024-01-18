@@ -1,10 +1,14 @@
 \section{Sources of uncertainties}
 \label{sec:sources-of-uncertainties}
-Uncertainties are an inherent part of any measurement or calculation, and it is important to properly account for them to obtain reliable results.There are several sources of uncertainties that need to be considered. These include statistical uncertainties, systematic uncertainties, and model uncertainties. Statistical uncertainties arise from the limited precision of our measurements or the finite size of our data samples. Systematic uncertainties, on the other hand, arise from imprecision in our experimental setup or analysis techniques. Model uncertainties arise from the limitations of our theoretical models used.
+Uncertainties are an inherent part of any measurement, and it is important to properly account for them. There are several sources of uncertainties that need to be considered. These include statistical uncertainties, systematic uncertainties, and model uncertainties. Statistical uncertainties arise from the finite size of our data samples. Systematic uncertainties, on the other hand, arise from imprecision in our experimental setup or analysis techniques, for example, inefficiencies in the detection or reconstruction of particle signatures, and limitations of the calibration of detector components. Model uncertainties arise from the limitations of our theoretical models used, in this case, the MC simulations of the signal and background processes. Different sources of uncertainties are discussed in the following sections. Uncertainties are incorporated in the fit model as nuisance parameters (NP), which are constrained to be within their uncertainties. For every source, one NP is added to the fit model. Uncertainties arising from different sources are treated as independent and uncorrelated. This means that the impact of one source of uncertainty does not affect the impact of another source. However, uncertainties within the same source are assumed to be correlated across different signal and control regions. Systematic uncertainties are modeled using Gaussian constraints. On the other hand, statistical uncertainties are modeled using Poisson constraints. The uncertainties associated with the nuisance parameters are estimated from the fit and propagated to the final results.
 
-% Individual sources of uncertainties are considered to be uncorrelated.
-% Uncertainties are considered correlated between different regions.
-% Gaussian constraints are used for the systematic uncertainties, and Poisson constraints are used for the statistical uncertainties.
-% They are included in the fit as nuisance parameters, which are constrained to be within their uncertainties.
-% The nuisance parameters are profiled in the fit, and the uncertainties are propagated to the final results.
-%
+Uncertainties with up and down variations are symmetrized using the Two-Sided symmetrization method in the following way $$ \mathrm{symmetrized \ up/down} = \mathrm{nominal} \pm (\mathrm{up - down})/2 $$. In cases where only one variation is available, the other variation is obtained by mirroring the available one around the nominal. 
+
+Uncertainties with negligible impact are pruned from the fit model to avoid using too many NPs. The smoothing technique is used for some sources of uncertainties to reduce the impact of statistical fluctuations in the template.
+
+\subsection{Theoretical uncertainties}
+\label{sec:theoretical_uncertainties}
+
+\subsection{Experimental uncertainties}
+\label{sec:experimental_uncertainties}
+
