@@ -1,19 +1,10 @@
 \section{Data set and event simulations}
 \label{sec:data-and-mc-simulations}
-%-----------------------------------
-%	SUBSECTION 1
-%-----------------------------------
 
-The dataset used in the measurement contains the proton-proton collision data at center-of-mass energy 13 TeV collected by the ATLAS detector during its Run2 operation (2015-2018). In total, ATLAS recorded 140.1 $fb^{-1}$ of data which can be used for physics analysis \cite{Aad_2020}. The pileup events for different year is shown here.
-
-
-%-----------------------------------
-%	SUBSECTION 2
-%-----------------------------------
+The dataset used in the measurement contains the proton-proton collision data at center-of-mass energy 13 TeV collected by the ATLAS detector during its Run2 operation (2015-2018). In total, ATLAS recorded 140.1 $fb^{-1}$ of data which can be used for physics analysis \cite{Aad_2020}.
 
 \subsection{Signal and background simulations}
-%Recorded data are compared to simulated samples to compute the detector recon- struction efficiencies and acceptance, and to estimate the systematic uncertainties. Simulated samples are also used to evaluate the final contribution of the signal processes.
-Simulated events are used in almost all parts of the analysis, for example in measuring the signal efficiency and acceptance in different phase space, also in estimating the systematic uncertainties, also to estimate the final contribution of the signal and background process in the measurement region. Different event generators are used to simulate signal and background process mentioned in the table {table}. Simulation is done for each data-taking period to match the varying conditions of the ATLAS detector.
+Simulated events are used in almost all parts of the analysis, for example in measuring the signal efficiency and acceptance in different phase spaces, in estimating the systematic uncertainties, also in estimating the final contribution of the signal and background process in the measurement region. Different event generators are used to simulate the signal and background process mentioned in the table {table}. Simulation is done for each data-taking period to match the varying conditions of the ATLAS detector.
 Simulated events are then processed with \textsc{Geant4} to simulate the detector response {ref}. As full detector simulation is computationally expensive, for some of the samples, the fast-simulation package \textsc{AtlFast-II} is used, which speeds up the simulation {ref}. Additional p p interactions from the same bunch crossing are simulated as minimum-bias interactions using PYTHIA8 {ref} using the set of tuned parameters called A3 {ref} and the NNPDF2.3LO PDF set {ref}. These events are then superimposed on the hard-scattering events. MC events are later reweighted to match the pile-up conditions of the observed data. For that three different subcampaigns, \textit{mc16a, mc16d} and \textit{mc16e} are defined to reflect the data-taking conditions in 2015+16, 2017 and 2018 respectively.
 
 \textit{Dedicated} samples as well as \textit{inclusive} samples have been used in this analysis. Dedicated sample contains the photon emission at the matrix element level whereas in the inclusive sample, the photon emission is taken care of by the parton shower algorithms. Matrix element level calculation is more precise than the calculation in the parton shower. Dedicated samples are used for \tty production and \vgamma processes, for other processes inclusive samples are used. Phase space overlap removal procedure is applied between dedicated samples and inclusive samples to avoid any double counting of the events (detailed in Section). %~\ref{sec:sample-overlap-removal}).
@@ -70,23 +61,10 @@ The samples are normalised to next-to-leading order in both QCD and electroweak 
 
 \subsection{Sample-overlap removal procedure}
 \label{sec:sample-overlap-removal}
-% reference Knut's thesis, John's thesis, Amartya's thesis
+The general process of MC simulation of a physics process involves the generation of hard-scattering events on matrix-element level, followed by parton showering and hadronisation. The emission of photons is taken care of by the parton showering algorithm. However, dedicated samples are generated in which the photon is emitted at the matrix-element level. This gives better accuracy in the simulation. But some part of the phase space is not simulated in the matrix-element level. Both dedicated and inclusive samples are used in the analysis. This poses a danger of double-counting of events. A sample-overlap removal procedure is performed between inclusive and dedicated samples. The recipe for the removal is (1) to accept all events from the dedicated samples, since the photon radiation simulated on matrix-element level comes with higher accuracy than the radiation accounted for in the showering algorithm. In addition, the generated number of events for phase-space areas covered by both inclusive and dedicated samples is by far larger for the latter. And (2) to remove events from the inclusive samples if they overlap with the dedicated simulation. However, removing \emph{all} events with radiative photons from the inclusive samples would be too strict as the dedicated samples apply cuts on the kinematics of the matrix-element photon.
 
-% We have dedicated samples in which the photon is emitted at the matrix-element level, this gives better accuracy in 
 
-Because events with photons outside the kinematic requirements of the dedicated $X\gamma$~samples are not simulated in these samples, they are to be taken from the inclusive $X$~samples.
-Although no photons are generated on matrix-element level in the inclusive samples, radiation of extra photons is still accounted for by the showering algorithm.
-This includes simulation of photon radiation from both initial-state and final-state objects.
-For example, if inclusive \ttbar production is generated in the matrix element including decays of the top quarks and $W$ bosons, the simulation of the parton shower includes radiative photons from any of the charged final-state products, such as leptons from the $W$~boson decay.
-If that particular \ttbar event was simulated through quark-antiquark annihilation, radiative photons may also arise from the quarks in the initial state.
-Hence, events in inclusive samples, where a photon was generated by the showering algorithm, pose a danger of double-counting if a dedicated sample is used simultaneously.
-
-As a consequence, a sample-overlap removal procedure is performed between inclusive $X$~and dedicated $X\gamma$ samples.
-In particular, the removal procedure is applied for simulations of \ttbar~and \tty~events, \tWy, $W$+jets~and $W\gamma$~events, and for $Z$+jets~and $Z\gamma$~events.
-The recipe for the removal is (1) to accept all events from the $X\gamma$~samples, since the photon radiation simulated on matrix-element level comes with higher accuracy than the radiation accounted for in the showering algorithm.
-In addition, the generated number of events for phase-space areas covered by both inclusive and dedicated samples is by far larger for the latter.
-And (2) to remove events from the $X$~samples if they overlap with the $X\gamma$ simulation.
-However, removing \emph{all} events with radiative photons from the $X$~samples would be too strict as the $X\gamma$~samples apply cuts on the kinematics of the matrix-element photon.
+%As a consequence, a sample-overlap removal procedure is performed between inclusive $X$~and dedicated $X\gamma$ samples. In particular, the removal procedure is applied for simulations of \ttbar~and \tty~events, \tWy, $W$+jets~and $W\gamma$~events, and for $Z$+jets~and $Z\gamma$~events. The recipe for the removal is (1) to accept all events from the $X\gamma$~samples, since the photon radiation simulated on matrix-element level comes with higher accuracy than the radiation accounted for in the showering algorithm. In addition, the generated number of events for phase-space areas covered by both inclusive and dedicated samples is by far larger for the latter. And (2) to remove events from the $X$~samples if they overlap with the $X\gamma$ simulation. However, removing \emph{all} events with radiative photons from the $X$~samples would be too strict as the $X\gamma$~samples apply cuts on the kinematics of the matrix-element photon.
 
 The sample-overlap removal procedure is implemented with the central algorithm
 \emph{VGammaORTool}%
