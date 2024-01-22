@@ -1,11 +1,14 @@
-\section{Data set and event simulations}
+\chapter{Simulation of signal and background}
+\label{Simulation}
+
+\section{Introduction}
 \label{sec:data-and-mc-simulations}
 
-The dataset used in the measurement contains the proton-proton collision data at center-of-mass energy 13 TeV collected by the ATLAS detector during its Run2 operation (2015-2018). In total, ATLAS recorded 140.1 $fb^{-1}$ of data which can be used for physics analysis \cite{Aad_2020}.
+The dataset used in the measurement contains the proton-proton collision data at center-of-mass energy 13 TeV collected by the ATLAS detector during its Run2 operation (2015-2018). In total, ATLAS recorded 140.1 \ifb of data which can be used for physics analysis \cite{Aad_2020}.
 
 \subsection{Signal and background simulations}
 Simulated events are used in almost all parts of the analysis, for example in measuring the signal efficiency and acceptance in different phase spaces, in estimating the systematic uncertainties, also in estimating the final contribution of the signal and background process in the measurement region. Different event generators are used to simulate the signal and background process mentioned in the table {table}. Simulation is done for each data-taking period to match the varying conditions of the ATLAS detector.
-Simulated events are then processed with \textsc{Geant4} to simulate the detector response {ref}. As full detector simulation is computationally expensive, for some of the samples, the fast-simulation package \textsc{AtlFast-II} is used, which speeds up the simulation {ref}. Additional p p interactions from the same bunch crossing are simulated as minimum-bias interactions using PYTHIA8 {ref} using the set of tuned parameters called A3 {ref} and the NNPDF2.3LO PDF set {ref}. These events are then superimposed on the hard-scattering events. MC events are later reweighted to match the pile-up conditions of the observed data. For that three different subcampaigns, \textit{mc16a, mc16d} and \textit{mc16e} are defined to reflect the data-taking conditions in 2015+16, 2017 and 2018 respectively.
+Simulated events are then processed with \GEANT to simulate the detector response {ref}. As full detector simulation is computationally expensive, for some of the samples, the fast-simulation package \textsc{AtlFast-II} is used, which speeds up the simulation {ref}. Additional p p interactions from the same bunch crossing are simulated as minimum-bias interactions using PYTHIA8 {ref} using the set of tuned parameters called A3 {ref} and the \nnpdflo PDF set {ref}. These events are then superimposed on the hard-scattering events. MC events are later reweighted to match the pile-up conditions of the observed data. For that three different subcampaigns, \textit{mc16a, mc16d} and \textit{mc16e} are defined to reflect the data-taking conditions in 2015+16, 2017 and 2018 respectively.
 
 \textit{Dedicated} samples as well as \textit{inclusive} samples have been used in this analysis. Dedicated sample contains the photon emission at the matrix element level whereas in the inclusive sample, the photon emission is taken care of by the parton shower algorithms. Matrix element level calculation is more precise than the calculation in the parton shower. Dedicated samples are used for \tty production and \vgamma processes, for other processes inclusive samples are used. Phase space overlap removal procedure is applied between dedicated samples and inclusive samples to avoid any double counting of the events (detailed in Section). %~\ref{sec:sample-overlap-removal}).
 
@@ -35,7 +38,6 @@ Two tW samples with different photon source, i.e, production and decay are consi
 \textbf{W$\gamma$/Z$\gamma$:} \\
 Events with $W\gamma$~and $Z\gamma$~final states (with additional jets) are simulated in dedicated samples. Both processes are simulated with \sherpa 2.2.8~\cite{Gleisberg:2008ta,Hoeche:2009rj} at next-to-leading order in QCD using the \nnpdfnnlo PDF set. %, whereas $Z\gamma$ events are generated with \sherpa 2.2.4 at leading order in QCD. 
 The samples are normalised to the cross-sections given by the corresponding Monte Carlo simulation. The simulation includes all steps of the event generation, from the hard process to the observable particles. All samples are matched and merged to the \sherpa-internal parton showering based on Catani-Seymour dipoles~\cite{Gleisberg:2008fv,Schumann:2007mg} using the MEPS@NLO prescription~\cite{Hoeche:2011fd,Catani:2001cc,Hoeche:2012yf}. Virtual corrections for the next-to-leading order accuracy in QCD in the matrix element are provided by the OpenLoops library~\cite{Cascioli:2011va,Denner:2016kdg}.
-
 
 
 \subsection{Inclusive samples}

@@ -54,6 +54,10 @@ headsepline, % Uncomment to get a line under the header
 \usepackage{placeins}
 \usepackage{subfig}
 \usepackage{parskip}
+\input{Others/custom-commands.tex}
+\usepackage{Others/atlasmisc}
+\usepackage{Others/atlasunit}
+
 
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
@@ -93,9 +97,6 @@ headsepline, % Uncomment to get a line under the header
 \hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
 }
 
-\input{Others/custom-commands.tex}
-\usepackage{Others/atlasmisc}
-\usepackage{Others/atlasunit}
 \usepackage{amsmath}
 \usepackage{hyperref}
 \usepackage{cleveref}
@@ -277,12 +278,13 @@ $\omega$ & angular frequency & \si{\radian} \\
 % Uncomment the lines as you write the chapters
 
 \include{Chapters/Chapter0}
-\include{Chapters/Chapter1}
-\include{Chapters/Chapter2} 
+\include{Chapters/Chapter1/Chapter1}
+\include{Chapters/Chapter2/Chapter2} 
 \include{Chapters/AnalysisOverview} 
-\include{Chapters/Chapter3}
-%\include{Chapters/Chapter4} 
-%\include{Chapters/Chapter5} 
+\include{Chapters/Simulation/Simulation} 
+\include{Chapters/EventSelection/event_selection} 
+\include{Chapters/BackgroundEstimation/background_estimation} 
+\include{Chapters/Chapter3/Chapter3}
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES

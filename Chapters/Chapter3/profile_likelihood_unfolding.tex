@@ -14,7 +14,7 @@ The reconstruction level spectrum $y$ can be written in terms of the truth spect
 \FloatBarrier
 
 \paragraph{Likelihood construction}
-In \emph{TRExFitter} the likelihood is constructed using the \textsc{histfactory} [todo cite] which is used to build parametrized probability density functions in the RooFit/RooStats framework [todo cite] using simple ROOT histograms. The likelihood is constructed using the truth histogram and the response matrix for signal and histogram templates at the reconstruction level for backgrounds, as below:
+In \emph{TRExFitter} the likelihood is constructed using the \textsc{histfactory}~\cite{Cranmer:2012sba} which is used to build parametrized probability density functions in the RooFit/RooStats framework [todo cite] using simple ROOT histograms. The likelihood is constructed using the truth histogram and the response matrix for signal and histogram templates at the reconstruction level for backgrounds, as below:
 \begin{equation}\label{eq:likelihodd-defn}
 	L(\vec{n}^{data} | \vec{k}, \vec{\theta}) = \prod_{\mathrm{c} \epsilon \mathrm{Region}} \quad \prod_{\mathrm{b} \epsilon \mathrm{Bins}} \mathrm{Pois} (n^{\mathrm{data}}_{b,c}|\nu_{b,c}(\vec{k}, \Vec{\theta})) \cdot \prod_{p} \mathrm{Gauss}(0|\theta_{p},1)
 \end{equation}
