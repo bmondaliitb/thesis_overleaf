@@ -1,0 +1,22 @@
+\section{Fiducial phase space}
+\label{sec:fiducial-phase-space}
+The measurements are performed at particle level in a fiducial phase space volume. Particle level refers to final state particles after the parton showering and hadronization but prior to any interaction with the detector apparatus. The fiducial regions in the single lepton and dilepton final states are defined to closely follow the kinematic requirements at reconstruction level. The objects are defined as follows:
+\begin{itemize}
+\item Photons: Photons are required to not originate from a hadron decay, to have $p_T > \SI{20}{\GeV}$ and $|\eta| < \SI{2.37}{}$ and to be isolated such that the sum of transverse momenta of all charged particles surrounding the photon within $\Delta R \leq$ 0.2 must be smaller than 5\% of its own \pt.
+\item Leptons: Electrons and muons are dressed with close by photons (photons which are not originating
+from hadrons, in a $\Delta R <0.1$ cone around the lepton). Leptons are required to have \pt $>$ 25 GeV
+and $|\eta|<$ 2.5, and not being originated from hadron decays.
+\item Jets: Jets are clustered with the anti-kt algorithm with a radius of R = 0.4. Non-interacting particles and
+muons are not considered in the clustering. Jets are required to have \pt $>$ 25 GeV
+and $|\eta|<$ 2.5
+\item b-jets: A particle-level jet is identified as a $b$-jet if a hadron with $\pT > \SI{5}{\GeV}$ containing a $b$-quark is matched to the jet through a ghost-matching method~\cite{Cacciari:2008gn}.
+\item The overlap removal among the different objects is performed in the following order:
+\begin{itemize}
+\item Muon-jet: Jets with $\Delta R(\mu, j)\leq 0.4$ are removed.
+\item Electron-jet: Jets with $\Delta R(e, j)\leq 0.4$ are removed.
+\item Photon-jet: Jets within $\Delta R( j, \gamma) \leq 0.4$ of an isolated photon are removed.
+\end{itemize}
+\end{itemize}
+
+The fiducial phase space in the single-lepton channel is defined by requiring exactly one photon, exactly one electron or muon, at least four jets among which at least one is a $b$-jet. In the case of the dilepton channels, it is defined by requiring exactly one photon, exactly two leptons (electron or muon), at least two jets among which at least one is a $b$-jet.
+

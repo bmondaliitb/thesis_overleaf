@@ -1,0 +1,239 @@
+
+\chapter{Measurement of the \tty cross-sections} % Main chapter title
+\label{Chapter3} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+
+\input{Chapters/Chapter3/fiducial_phase_space.tex}
+
+\section{Differential cross-section measurement}
+\label{sec:diff-xsec-measurement}
+The cross-section is measured within a defined fiducial phase space volume (\cref{sec:fiducial-phase-space}) at particle level as a function of different observables listed in \cref{tab:listvariables}. The cross-section at the particle level is derived using an unfolding technique. Unfolding is used to extract the truth spectrum from the reconstruction level spectrum correcting the detector effects such as limited resolutions, efficiency and acceptance effects, making the results easier to compare with the theoretical predictions. We implement the profile likelihood unfolding method for this purpose, detailed in \cref{sec:profile-likelihodd-unfolding}. 
+
+Ideally, a continuous functional dependence of the measurement would be preferable. However, the finite detector resolution prevents this. Consequently, we measure the cross-section in discrete bins. For more information on how the bins are chosen detailed in \cref{sec:choice-of-binning}.
+
+\begin{table}[ht]
+\caption{The differential cross sections are measured in single-lepton channel and dilepton channel as a function of the following variables: }
+\label{tab:listvariables}
+\begin{footnotesize}
+\begin{tabular} {r l }
+  Symbol & Defintion \\
+  \hline
+  Both dilepton and single lepton channels: & \\
+  \hline 
+  \pt($\gamma$) & Transverse momentum of photon \\ 
+  $|\eta|$($\gamma$) & Absolute value of the pseudorapidity of the photon \\
+  \DRlph & Angular separation between the photon and the closest lepton \\
+  $\Delta R_{min}(\gamma, b)$ &  Angular separation between the photon and the closest $b$ jet \\
+  $\Delta R_{min}(l, j)$ & Smallest angular separation between any of the selected leptons and jets \\
+  $p_T(j_1)$ & Transverse momentum of the leading jet\\
+
+  \hline
+  Additional variables for dilepton channel: & \\
+  \hline
+  $\Delta R(\gamma, l_1)$ & Angular separation between the photon and the leading lepton\\
+  $\Delta R(\gamma, l_2)$ & Angular separation between the photon and the subleading lepton\\
+  \Detall & Pseudorapidity difference between the two leptons\\
+  \Dphill & Azimuthal angle difference between the two leptons\\
+  $p_T(l,l)$ & Transverse momentum of the dilepton system\\
+  $p_T(j_1)$ & Transverse momentum of the leading jet\\
+    
+\end{tabular}
+
+\end{footnotesize}
+\end{table}
+\FloatBarrier
+
+As detailed in profile-likelihood unfolding section[\ref{sec:profile-likelihodd-unfolding}], the histogram templates at the reconstruction level are used as the inputs for the unfolding, where the signal histograms are obtained by folding the truth distributions with the response matrix. To take into account the uncertainties response matrices are constructed for every source of systematic uncertainties for signal and varied histogram templates (at the reconstruction level) are produced for background templates. More details on how the truth distributions and response matrices are constructed are detailed in \cref{sec:inputs-for-unfolding}.
+
+Before the unfolding procedure is applied to the real data various tests are performed beforehand using the pseudo-data. This approach validates the unfolding procedure and avoids any post-unfolding modifications to the model, which could introduce bias. Here pseudo-data refers to the sum of all MC templates including signal and backgrounds. Two tests are performed, closure test and stress test. In the closure test, the pseudo-data is unfolded and compared with the truth distribution of the signal, and a good closure is observed (more on closure test in \cref{sec:closure_test}). This validates that the unfolding procedure using response matrix and truth distribution can correctly measure the signal from the dataset (in this case pseudo-dataset). The signal normalization and shape shape in real data can be different than in MC simulation. Unfolding using MC truth distribution and response matrix (which is derived from MC simulation) can introduce bias while measuring the signal from the real data. The stress test mentioned in \cref{sec:stress_test} validates that the unfolding procedure is very robust and can measure the signal correctly from the data even if the shape of the signal present in the data is different than in MC simulation. 
+
+After validating the unfolding procedure, fit and unfolding is performed on the real data to measure the cross-section. The results are detailed in \cref{sec:tty_prod_measurement}, \cref{sec:tty_total_measurement} and \cref{sec:tty_prod_sldl_measurement} for \tty production measurement, inclusive \tty measurement and \tty production measurement in a combined single lepton and dilepton channel respectively.
+
+\input{Chapters/Chapter3/profile_likelihood_unfolding.tex}
+
+\subsection{Choice of binning}
+\label{sec:choice-of-binning}
+The choice of the binning depends on several factors, the bin width of each bin must be greater than the resolution of the observable in that range and the statistical uncertainties in every bin of the measured distribution are small enough to avoid large fluctuations. To achieve this, two criteria were chosen to determine the bin widths. The bin width is chosen such that it is larger than twice the resolution of the observable and that the expected statistical uncertainty in the measured distribution is below 10\%. The algorithm starts with a finer binned histogram at the reconstruction level and starts to merge the bin from left to right till the statistical uncertainty reaches below 5-7\% (depending on the observable). This process is performed only considering the signal region (at the reconstruction level) due to the complexity of the profile likelihood unfolding across multiple reconstruction regions. After determining the binning edges through the algorithm, the fit and unfolding are performed and finally the statistical uncertainty is verified at the unfolded distribution. A crucial consideration is that the binning choice should exceed twice the resolution of the variable, as stated above. The resolution for the variable $\pt(\gamma)$, $|\eta(\gamma)|$, $\Delta R(\gamma,l)$, $\Delta R(\gamma,b)$, $\Delta R_{min}(l,j)$, $\Delta \eta(l,l)$, $\Delta \phi(l,l)$, $\pt(j_1)$, $\pt(l,l)$ are found to be around 1-2 GeV, 0.1-0.15, 0.005-0.008, 0.014-0.020, 0.01, 0.0006, 0.0003, 10 GeV, 2-3 GeV, respectively. The optimized bin widths based on the statistical uncertainty fullfilled in all cases the resolution criterion. During binning optimization, we observed slight statistical fluctuations in some bins, which can be attributed to the complexities of fit and unfolding across regions. For those cases the bin boundaries were slightly adjusted as well as to have simpler bin edges (e.g. multiples of 0.1, 5, 10 depending on the distribution). 
+
+This study is performed for \tty(prod) and \tty(total) measurements in dilepton channel. The results are compared among the two sets and with the binning used by CMS measurement ~\cite{CMS2022}. The bin boundaries showed significant similarities. Testing our unfolding setup against CMS binning revealed that the unfolded distributions met the set criteria, yielding in general similar uncertainties and migrations. Consequently, we adopted the CMS binning, allowing a more conducive comparison in the future. For illustration, the resolution and comparison of two setups for some example variables can be found in appendix~\ref{sec:binning_optimization_study}. The same binning was applied to the l+jets channel. 
+
+The unfolded $\pt(\gamma)$ distribution is used as input for the EFT measurement combining the single lepton and dilepton fiducial phase spaces as mentioned in section {ToDo: add ref}. The binning for this variable was revised to improve the sensitivity in the EFT measurement, increasing the number of bins while keeping the total expected uncertainty in the tail of the distribution around 10\%, which is most sensitive to the EFT parameters.  
+
+
+
+\subsection{Inputs for unfolding}
+\label{sec:inputs-for-unfolding}
+As inputs to the unfolding, binned distribution of the observable at particle level as well as the response matrix are needed. Binned distributions at the particle level are obtained after applying the particle level event selection outlined in \cref{sec:event-selection}. These distributions are depicted in \cref{fig:folding_input_ljet} for the single lepton channel and in \cref{fig:folding_input_dilep1} for the dilepton channel. The bin content, represented by $T_{i}$, serves as input for the Likelihood function described in \cref{eq:likelihodd-defn-1}.
+
+\paragraph{Response matrix} The response matrix effectively translates particle level distribution to the reconstruction level distribution taking into account factors like selection efficiency, detector acceptance and migration of events to neighboring bins. Essentially, when the response matrix is applied to the truth distribution it yields distribution at the reconstruction level. Response matrix is constructed from particle level to each region in reconstruction level, resulting in 4 response matrices for single lepton channel and 2 for dilepton channel. Furthermore, response matrices are obtained for each source of uncertainty. These matrices are formulated using the migration matrix ($N_{r \cap t}$), which relates the reconstructed and truth level distributions for the respective variable, along with the corresponding truth ($N_{t}$) and reconstructed ($N_{r}$) distributions in the following way:
+\begin{align}
+    \text{Response, } P_{r,t} = \frac{M_{\mathrm{r,t}} \times \epsilon_{t}}{f_{r}}\\
+    = \frac{\frac{N_{r \cap t}}{\sum_{r} N_{r \cap t}} \times \frac{\sum_{r} N_{r \cap t}}{N_{t}}}{\frac{\sum_{t} N_{r \cap t}}{N_{r}}}\\
+    = N_{r \cap t} \times \frac{N_{r}}{N_{t}\times \sum_{t} N_{r \cap t}}
+\end{align}
+
+where, \\
+$M_{\mathrm{r,t}}$ is the normalised Migration matrix (as shown in \cref{fig:folding_input_migration_dilep}, \cref{fig:folding_input_migration_ljet}),\\
+$\epsilon_{t}$ is the efficiency of the truth events and \\
+$f_{r}$ is the acceptance of the reconstructed events
+
+\vspace*{20pt}
+
+For illustration, the normalized migration matrices for $p_T(\gamma)$ in the different signal and control regions are shown in \cref{fig:folding_input_migration_ljet} and \cref{fig:folding_input_migration_dilep} for the single lepton and dilepton channels, respectively. The response matrices for $p_T(\gamma)$  are shown in \cref{fig:folding_input_response_ljet_pt1} and \cref{fig:folding_input_response_dilep} for single channel and dilepton channel respectively. Additionally in \cref{fig:folding_input_response_ljet_pt1} and \cref{fig:folding_input_response_dilep} data-MC Comparison plots are shown where the signal is reconstructed by folding the truth distribution with the response matrix. 
+
+The signal histogram is obtained at the reconstruction level using truth distribution and response matrix. The histogram templates for backgrounds are also used as inputs for the fit and unfolding. The background templates are constructed using the MC samples described in [todo ref] and applying the signal and control region selection criteria and merged into categories as described in the \cref{sec:photon-categorisation}. The background templates enter in the likelihood function following the equation \cref{eq:likelihodd-defn-1}.
+%The migration matrices, response matrices and data-MC comparison plots for other observables are shown in Section ~\ref{sec:results_others_ljet} for the single lepton channel and in Section ~\ref{sec:results_others_dilep} for the dilepton channel.
+
+
+
+
+\begin{figure}[ht]
+    \centering
+    % ph pt
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Truth_dist/tty1l_pt_all_syst_Unfolding_truth_distribution.pdf}}
+    \quad
+    % ph eta
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Truth_dist/tty1l_eta_all_syst_Unfolding_truth_distribution.pdf}}
+    \quad
+    % delta R (ph, l)
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Truth_dist/tty1l_dr_all_syst_Unfolding_truth_distribution.pdf}}
+    \quad
+    % delta R (ph, b)
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Truth_dist/tty1l_drphb_all_syst_Unfolding_truth_distribution.pdf}}
+    \quad
+    % delta R(lj)
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Truth_dist/tty1l_drlj_all_syst_Unfolding_truth_distribution.pdf}}
+    % pt j1
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Truth_dist/tty1l_ptj1_all_syst_Unfolding_truth_distribution.pdf}}
+    \caption{The particle level distribution of \tty production as a function of different observables in the single-lepton channel. The number of events corresponds to the expected number of events at the particle level normalized to the luminosity of data. Overflow events are included in the last bin of the corresponding distribution. Note that values are divided by bin width.}
+    \label{fig:folding_input_ljet}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[ht]
+    \centering
+    % ph pt
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Truth_dist/tty2l_pt_all_syst_Unfolding_truth_distribution.pdf}}
+    \quad
+    % ph eta
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Truth_dist/tty2l_eta_all_syst_Unfolding_truth_distribution.pdf}}
+    \quad
+    % delta R (ph, l)
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Truth_dist/tty2l_dr_all_syst_Unfolding_truth_distribution.pdf}}
+    \quad
+    % delta R (ph, l1)
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Truth_dist/tty2l_dr1_all_syst_Unfolding_truth_distribution.pdf}}
+    \quad
+    % delta R (ph, l2)
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Truth_dist/tty2l_dr2_all_syst_Unfolding_truth_distribution.pdf}}
+    \quad
+    % delta R (ph, b)
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Truth_dist/tty2l_drphb_all_syst_Unfolding_truth_distribution.pdf}}
+    \quad
+    % dEta(ll)
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Truth_dist/tty2l_dEtall_all_syst_Unfolding_truth_distribution.pdf}}
+    \quad
+    % dPhi(ll)
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Truth_dist/tty2l_dPhill_all_syst_Unfolding_truth_distribution.pdf}}
+    \quad
+    % Pt(ll)
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Truth_dist/tty2l_ptll_all_syst_Unfolding_truth_distribution.pdf}}
+    \quad
+    % Delta R (lj)
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Truth_dist/tty2l_drlj_all_syst_Unfolding_truth_distribution.pdf}}
+    \quad
+    % pt j1
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Truth_dist/tty2l_ptj1_all_syst_Unfolding_truth_distribution.pdf}}
+
+    \caption{The particle level distribution of \tty production as a function of different observables in the dilepton channel. The number of events corresponds to the expected number of events at the particle level normalized to the luminosity of data. Overflow events are included in the last bin of the corresponding distribution. Note that values are divided by bin width.}
+    \label{fig:folding_input_dilep1}
+\end{figure}
+\FloatBarrier
+
+
+%%%%%%%%
+%  Migration matrices ljet 
+%%%%%%%%
+\begin{figure}[ht]
+    \centering
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Migration/migration_h2_ph_pt_reco_part_full_weighted_SR1.pdf}}
+    \quad\quad
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Migration/migration_h2_ph_pt_reco_part_full_weighted_SR2.pdf}}
+    \quad\quad
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Migration/migration_h2_ph_pt_reco_part_full_weighted_SR3.pdf}}
+    \quad\quad
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Migration/migration_h2_ph_pt_reco_part_full_weighted_SR4.pdf}}
+    \quad\quad
+    \caption{The normalized migration matrices, $M_{\mathrm{r,t}}$, representing the migration of events from particle level to four regions at the reconstruction level: (a) \tty production enriched region, (b) \tty decay enriched region (c) fakes enriched region, (d) prompt photon enriched region for the observable $p_T(\gamma)$ in single-lepton channel.}
+    \label{fig:folding_input_migration_ljet}
+\end{figure}
+\FloatBarrier
+
+%%%%%%%%
+%  Response matrices ljet
+%%%
+\begin{figure}[!ht]
+  \centering
+  \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Migration/response_h2_response_matrix_ph_pt_SR1.pdf}}
+  \quad\quad
+  \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Migration/response_h2_response_matrix_ph_pt_SR2.pdf}}
+  \quad\quad
+  \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Migration/response_h2_response_matrix_ph_pt_SR3.pdf}}
+  \quad\quad
+  \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Migration/response_h2_response_matrix_ph_pt_SR4.pdf}}
+  \caption[Short caption for LoF]{Response matrices for the observable $p_T(\gamma)$ in the single-lepton channel, split across four regions determined. (a-d) Response matrices for the \tty production, \tty decay, fakes, and prompt photon enriched regions, respectively. -- \emph{Continued on next page}}
+  \label{fig:folding_input_response_ljet_pt1}
+\end{figure}
+\begin{figure}[!ht]
+  \ContinuedFloat
+  \centering
+  \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Folded_distributions/tty1l_pt_all_syst/Plots/SR1.pdf}}
+  \quad\quad
+  \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Folded_distributions/tty1l_pt_all_syst/Plots/SR2.pdf}}
+  \quad\quad
+  \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Folded_distributions/tty1l_pt_all_syst/Plots/SR3.pdf}}
+  \quad\quad
+  \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/ljet/Folded_distributions/tty1l_pt_all_syst/Plots/SR4.pdf}}
+  \caption[]{(e-h) Corresponding Data-MC comparisons. The signal distribution at the reconstruction level was created by folding the truth distribution with the respective response matrix.}
+  \label{fig:folding_input_response_ljet_pt2}
+\end{figure}
+
+%%%%%%%%
+%  Migration matrices dilep
+%%%%%%%%
+\begin{figure}[ht]
+    \centering
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Migration/migration_h2_ph_pt_reco_part_full_weighted_SR1.pdf}}
+    \quad\quad
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Migration/migration_h2_ph_pt_reco_part_full_weighted_SR2.pdf}}
+
+    \caption{The normalized migration matrices, $M_{\mathrm{r,t}}$ representing the migration of events from the particle level bin to the two regions at the reconstruction level: (a) $O_{\mathrm{NN}} \geq 0.6$ and (b) $O_{\mathrm{NN}} < 0.6$, for the observable $p_T(\gamma)$ in the dilepton channel.}
+    \label{fig:folding_input_migration_dilep}
+\end{figure}
+\FloatBarrier
+
+%%%%%%%%
+%  Response matrices dilep
+%%%
+\begin{figure}[ht]
+    \centering
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Migration/response_h2_response_matrix_ph_pt_SR1.pdf}}
+    \quad\quad
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Migration/response_h2_response_matrix_ph_pt_SR2.pdf}}
+    \quad\quad
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Folded_distributions/tty2l_pt_all_syst/Plots/SR1.pdf}}
+    \quad\quad
+    \subfloat[]{\includegraphics[width=0.3\textwidth]{figures/diff_xsec/dilep/Folded_distributions/tty2l_pt_all_syst/Plots/SR2.pdf}}
+    \quad\quad
+    \caption{Illustration of response matrices and data-MC comparison plots for the observable $p_T(\gamma)$ in dilepton channel. Subfigures: (a) Response matrix for $O_{\mathrm{NN}} \geq 0.6$. (b) Response matrix for $O_{\mathrm{NN}} < 0.6$. (c) Data-MC comparison for $O_{\mathrm{NN}} \geq 0.6$. (d) Data-MC comparison for $O_{\mathrm{NN}} < 0.6$. The signal distribution at the reconstruction level is created by folding the truth distribution with the corresponding response matrix.}
+    \label{fig:folding_input_response_dilep}
+\end{figure}
+\FloatBarrier
+
+
+\input{Chapters/Chapter3/result_tty_prod.tex}
+
+\input{Chapters/Chapter3/result_tty_total.tex}
+
+\input{Chapters/Chapter3/result_tty_prod_sldl.tex}
+
+\input{Chapters/Chapter3/unfolding_tests.tex}
