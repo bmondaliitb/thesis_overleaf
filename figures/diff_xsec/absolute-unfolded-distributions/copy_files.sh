@@ -1,0 +1,45 @@
+mkdir -p tty_prod_dilep tty_prod_ljet tty_total_dilep tty_total_ljet
+
+## ljet channel
+path="/Users/buddha/Desktop/current_work/addtext/v30//"
+cp $path/tty1l_pt_all_syst/tty_pt_UnfoldedData.pdf tty_prod_ljet/SL_tty_prod_pt_unfolded_absolute.pdf 
+cp $path/tty1l_eta_all_syst/tty_eta_UnfoldedData.pdf tty_prod_ljet/SL_tty_prod_eta_unfolded_absolute.pdf 
+cp $path/tty1l_dr_all_syst/tty_drphl_UnfoldedData.pdf tty_prod_ljet/SL_tty_prod_drphl_unfolded_absolute.pdf 
+cp $path/tty1l_drphb_all_syst/tty_drphb_UnfoldedData.pdf tty_prod_ljet/SL_tty_prod_drphb_unfolded_absolute.pdf 
+cp $path/tty1l_drlj_all_syst/tty_drlj_UnfoldedData.pdf tty_prod_ljet/SL_tty_prod_drlj_unfolded_absolute.pdf 
+cp $path/tty1l_ptj1_all_syst/tty_ptj1_UnfoldedData.pdf tty_prod_ljet/SL_tty_prod_ptj1_unfolded_absolute.pdf 
+
+path="/Users/buddha/Desktop/current_work/addtext/v31//"
+cp $path/tty1l_pt_all_syst/tty_pt_UnfoldedData.pdf tty_total_ljet/SL_tty_total_pt_unfolded_absolute.pdf 
+cp $path/tty1l_eta_all_syst/tty_eta_UnfoldedData.pdf tty_total_ljet/SL_tty_total_eta_unfolded_absolute.pdf 
+cp $path/tty1l_dr_all_syst/tty_drphl_UnfoldedData.pdf tty_total_ljet/SL_tty_total_drphl_unfolded_absolute.pdf 
+cp $path/tty1l_drphb_all_syst/tty_drphb_UnfoldedData.pdf tty_total_ljet/SL_tty_total_drphb_unfolded_absolute.pdf 
+cp $path/tty1l_drlj_all_syst/tty_drlj_UnfoldedData.pdf tty_total_ljet/SL_tty_total_drlj_unfolded_absolute.pdf 
+cp $path/tty1l_ptj1_all_syst/tty_ptj1_UnfoldedData.pdf tty_total_ljet/SL_tty_total_ptj1_unfolded_absolute.pdf 
+
+#### dilepton channel
+path="/Users/buddha/Desktop/current_work/addtext/v34//"
+cp $path/tty2l_pt_all_syst/tty_pt_UnfoldedData.pdf tty_prod_dilep/DL_tty_prod_pt_unfolded_absolute.pdf 
+cp $path/tty2l_eta_all_syst/tty_eta_UnfoldedData.pdf tty_prod_dilep/DL_tty_prod_eta_unfolded_absolute.pdf 
+cp $path/tty2l_dr_all_syst/tty_min_drphl_UnfoldedData.pdf tty_prod_dilep/DL_tty_prod_drphl_unfolded_absolute.pdf 
+cp $path/tty2l_dr1_all_syst/tty_drphl1_UnfoldedData.pdf tty_prod_dilep/DL_tty_prod_drphl1_unfolded_absolute.pdf 
+cp $path/tty2l_dr2_all_syst/tty_drphl2_UnfoldedData.pdf tty_prod_dilep/DL_tty_prod_drphl2_unfolded_absolute.pdf 
+cp $path/tty2l_drphb_all_syst/tty_drphb_UnfoldedData.pdf tty_prod_dilep/DL_tty_prod_drphb_unfolded_absolute.pdf 
+cp $path/tty2l_drlj_all_syst/tty_drlj_UnfoldedData.pdf tty_prod_dilep/DL_tty_prod_drlj_unfolded_absolute.pdf 
+cp $path/tty2l_ptj1_all_syst/tty_ptj1_UnfoldedData.pdf tty_prod_dilep/DL_tty_prod_ptj1_unfolded_absolute.pdf 
+cp $path/tty2l_dEtall_all_syst/tty_dEtall_UnfoldedData.pdf tty_prod_dilep/DL_tty_prod_dEtall_unfolded_absolute.pdf 
+cp $path/tty2l_dPhill_all_syst/tty_dPhill_UnfoldedData.pdf tty_prod_dilep/DL_tty_prod_dPhill_unfolded_absolute.pdf 
+cp $path/tty2l_ptll_all_syst/tty_ptll_UnfoldedData.pdf tty_prod_dilep/DL_tty_prod_ptll_unfolded_absolute.pdf 
+
+path="/Users/buddha/Desktop/current_work/addtext/v35//"
+cp $path/tty2l_pt_all_syst/tty2l_pt_all_syst_UnfoldedData.pdf tty_total_dilep/DL_tty_total_pt_unfolded_absolute.pdf 
+cp $path/tty2l_eta_all_syst/tty2l_eta_all_syst_UnfoldedData.pdf tty_total_dilep/DL_tty_total_eta_unfolded_absolute.pdf 
+cp $path/tty2l_dr_all_syst/tty2l_dr_all_syst_UnfoldedData.pdf tty_total_dilep/DL_tty_total_drphl_unfolded_absolute.pdf 
+cp $path/tty2l_dr1_all_syst/tty2l_dr1_all_syst_UnfoldedData.pdf tty_total_dilep/DL_tty_total_drphl1_unfolded_absolute.pdf 
+cp $path/tty2l_dr2_all_syst/tty2l_dr2_all_syst_UnfoldedData.pdf tty_total_dilep/DL_tty_total_drphl2_unfolded_absolute.pdf 
+cp $path/tty2l_drphb_all_syst/tty2l_drphb_all_syst_UnfoldedData.pdf tty_total_dilep/DL_tty_total_drphb_unfolded_absolute.pdf 
+cp $path/tty2l_drlj_all_syst/tty2l_drlj_all_syst_UnfoldedData.pdf tty_total_dilep/DL_tty_total_drlj_unfolded_absolute.pdf 
+cp $path/tty2l_ptj1_all_syst/tty2l_ptj1_all_syst_UnfoldedData.pdf tty_total_dilep/DL_tty_total_ptj1_unfolded_absolute.pdf 
+cp $path/tty2l_dEtall_all_syst/tty2l_dEtall_all_syst_UnfoldedData.pdf tty_total_dilep/DL_tty_total_dEtall_unfolded_absolute.pdf 
+cp $path/tty2l_dPhill_all_syst/tty2l_dPhill_all_syst_UnfoldedData.pdf tty_total_dilep/DL_tty_total_dPhill_unfolded_absolute.pdf 
+cp $path/tty2l_ptll_all_syst/tty2l_ptll_all_syst_UnfoldedData.pdf tty_total_dilep/DL_tty_total_ptll_unfolded_absolute.pdf 
