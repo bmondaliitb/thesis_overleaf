@@ -1,5 +1,9 @@
 \chapter{Sources of systematic uncertainties}
 \label{sec:sources-of-uncertainties}
+Todo: 
+\begin{itemize}
+    \item add example systematic variations for each cases 
+\end{itemize}
 Uncertainties are an inherent part of any measurement, and it is important to properly account for them. There are several sources of uncertainties that need to be considered. These include statistical uncertainties, systematic uncertainties, and model uncertainties. Statistical uncertainties arise from the finite size of our data samples. In collider experiments, events occur randomly with a constant probability. The number of events in a given sample is a random variable that follows a Poisson distribution. The statistical uncertainty is the standard deviation of the Poisson distribution. This is inherent to the data and can only be reduced by increasing the size of the data sample meaning more integrated luminosity.
 
 Systematic uncertainties, on the other hand, arise from imprecision in our experimental setup or analysis techniques. For example, the uncertainty can come from the particle reconstruction and identification, their energy and momentum measurement, luminosity measurement and so on.
@@ -31,34 +35,26 @@ Photons are reconstructed from the energy deposits in the calorimeter. The ident
 Electrons and photon energy are measured from EM calorimeter clusters. The energy and momentum scale and resolution are calibrated using \zee decay and are validated using radiative $Z-$boson decays(details in~\cite{ATLAS:2019qmc}). The muon momentum is studied using \zmumu and \jpsimumu processes, and correction factors are derived to correct the muon momentum scale and resolution in MC to match with the data~\cite{ATLAS:2016lqx}. The uncertainties on the calibration are used to create systematic variation templates to propagate the uncertainties to the analysis.
 
 
-\subsection*{Jet uncertainties}
-% jets are reconstructed using the topo-cluster formed from the energy deposits in the calorimeter as well as from the tracks in the inner detector, combining these two information is referred to as ATLAS particle-flow algorithm.
-% jets are first calibrated with sequence of simulation-based corrections then several in situ techniques are employed to correct the differences between data and simulation.
+\paragraph{Jet uncertainties}
 Jet reconstruction from the detector signature of the stable hadrons is described in~\cref{sec:physics_object_reconstruction}. The uncertainties come mainly from the jet energy scale and resolution, jet vertex tagging. Jet energy scale which calibrates the jet energy with the particle level energy of the jet. For this jets are calibrated first with the sequence of simulation-based corrections then several \emph{in-situ} techniques are used to correct the differences between data and simulation~\cite{ATLAS:2020cli}. The individual steps correct various effects, such as origin correction which corrects four-momentum to point to the primary vertex instead of pointing to the center of the detector, pile-up correction which removes the excess energy due to in-time and out-of-time pileup, absolute MC-based calibration which corrects jet 4-momentum to the particle-level energy scale, global sequential calibration which reduces flavor dependence and energy leakage effects using a calorimeter, track and other variables. Finally, a residual calibration is derived using \emph{in-situ} measurements and is applied only to data. The uncertainties may have many sources and are reduced to fewer effective nuisance parameters through eigenvector decomposition. Its uncertainty is split into several independent categories: modeling and statistical uncertainties on the extrapolation of the jet calibration from the central region, jet flavour composition, high-\pT jet behaviour, \bjet energy scale uncertainties, uncertainties due to pile-up, uncertainties on \textit{in situ} jet energy corrections, etc. In one category, there are usually more than one physical source of the uncertainty. To study the JES uncertainty, each source is varied up and down independently by its corresponding uncertainty. 
 
 The jet energy resolution (JER) is measured using the balance between jets and well measured objects like photons or $Z$ bosons~\cite{ATLAS:2020cli}. There are a total of seven effective nuisance parameters associated to JER in the category reduction scheme, and a single source of uncertainty for the agreement between data and Monte Carlo, all of which are varied by one sigma to study their impact on the analysis.
 
 The efficiency of the jet vertex tagging (JVT) algorithm is measured both in data and MC using the tag-and-probe method using \zmumu+jets events~\cite{ATLAS:2014cva}. Scale factors are derived by taking the ratio of the efficiency in data and MC. Scale factors are varied within their uncertainties to create systematic variation templates.
 
-\subsection*{\btag uncertainties}
+\paragraph{\btag uncertainties}
 Jets coming from a \bquarks have their own topological features, and \btag allows to distinguish them from light-flavour jets.  The uncertainty arises from the difficulty in distinguishing between \bquarks and light-flavour jets coming from the hadronization of light quarks.  The \btag efficiency is measured using the \ttbar events and the scale factors are derived by taking the ratio of the efficiency in data and MC~\cite{ATLAS:2019bwq}. For each jet category, the uncertainties are decomposed into several uncorrelated components using the eigenvector decomposition method. As a result in total 45 nuisance parameters for \bjets and 20 nuisance parameters for \cjets and light-flavour jets each~\cite{ATLAS:2017bcq} used. These NPs are varied by one sigma to create systematic variation templates.
-%For example, there are 9, 4 and 4 eigenvectors for \bjets, \cjets and light-flavour jets uncertainties, respectively~\cite{ATL-PHYS-PUB-2017-013}.
 The b-jets are calibrated for b-jets below 400 GeV, c-jets below 250 GeV and light jets below 300 GeV, a normalisation uncertainty was assigned to events containing at least one uncalibrated jet. For each type of jets one uncertainty was defined and for each event containing an uncalibrated jets of that type (b-jet, c-jets or light jet) a 50\% uncertainty was assigned. This leads to three systematic uncertainties.
 
-\subsection*{Missing transverse momentum}
+\paragraph*{Missing transverse momentum}
+The \met is the measure of missing transverse momentum in the event. It is reconstructed from the vector sum of several terms corresponding to different types of reconstructed objects~\cite{ATLAS:2018ghb}. The $\vec{E}_{\text{T}}^{\text{miss}}$ is calculated using components along the $x$ and $y$ axes: $$E_{x(y)}^{\text{miss}} = E_{x(y)}^{\text{miss},\mu} + E_{x(y)}^{\text{miss},e}  + E_{x(y)}^{\text{miss},\gamma} + E_{x(y)}^{\text{miss},\tau}  + E_{x(y)}^{\text{miss,jets}} + E_{x(y)}^{\text{miss,soft}} $$ The uncertainties for the reconstructed objects are propagated into the uncertainty of \met. The new contribution to the systematic uncertainty of \met comes from the soft terms $E_{x,y}^{\text{Soft}}$ . The systematic uncertainty of the soft-term scale is estimated by comparing the ratio of Monte-Carlo simulation to data. The average deviation of the ratio from unity is taken as a flat uncertainty on the absolute scale. The systematic uncertainty of the soft-term resolution is estimated by evaluating the level of agreement between data and MC in the $E^{\text{miss}}_{\text{x}}$ and $E^{\text{miss}}_{\text{y}}$ resolution. Both the scale and resolution of the soft term are varied up and down by one standard deviation to study their impact on the analysis. 
 
-The \met is reconstructed~\cite{ATLAS-CONF-2018-023} from the vector sum of several terms corresponding to different types of reconstructed objects. The estimated uncertainties for electrons, muons, photons and jets are propagated into the uncertainty of \met. Thus, the only new contribution is the systematic uncertainty of the soft terms $E_{\text{x,y}}^{\text{RefSoftJet}}$ and $E_{\text{x,y}}^{\text{CellOut}}$.
+\paragraph*{Pile-up uncertainties}
+The pile-up profile in the MC is corrected to match the data using the reweighting procedure. The uncertainty on the reweighting procedure is based on the disagreement between the instantaneous luminosity in data and in simulation. Both the nominal and systematically shifted pileup-reweighting weights are used to create systematic variation templates.
 
-The systematic uncertainty of the soft-term scale is estimated by comparing the ratio of Monte-Carlo simulation to data. The average deviation of the ratio from unity is taken as a flat uncertainty on the absolute scale. The systematic uncertainty of the soft-term resolution is estimated by evaluating the level of agreement between data and MC in the $E^{\text{miss}}_{\text{x}}$ and $E^{\text{miss}}_{\text{y}}$ resolution. Both the scale and resolution of the soft term are varied up and down by one standard deviation to study their impact on the analysis. 
-
-\subsection*{Pile-up uncertainties}
-
-The uncertainty on the reweighting procedure used to correct the pile-up profile in MC to match the data, is based on the disagreement between the instantaneous luminosity in data~\cite{DAPR-2013-01} and in simulation. Both the nominal and systematically-shifted pileup-reweighting weights are obtained using the standard \texttt{PileupReweighting} tool~\footnote{More details: \url{https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/ExtendedPileupReweighting}.}. 
 
 \subsection*{Luminosity uncertainties}
-
-As quoted in \cref{sec:selection}, the total integrated luminosity has an uncertainty of \intlumiunc.
-
+The integrated luminosity is measured using the van der Meer scan technique~\cite{ATLAS:2022hro}, and the uncertainty is estimated to be 0.83\%. Luminosity is varied up and down by its uncertainty to create systematic variation templates.
 
 
 \subsection{Model uncertainties}
