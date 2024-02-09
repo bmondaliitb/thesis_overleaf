@@ -1,0 +1,75 @@
+\section{Modelling uncertainties}
+\label{sec:theoretical_uncertainties}
+In the analysis signal and backgrounds are modeled using Monte Carlo (MC) simulation. The uncertainties in the parameter choices need to be considered, for example, the parton distribution functions (PDFs), the renormalization and factorization scales, the parton shower and hadronization model, the radiation in initial state radiation (ISR) and the hard gluon emission. These choices for the signal and background processes are discussed below. Also, the uncertainty in the cross-section for every process is considered. For the main contributing processes to the analysis, namely \tty production, \tty decay, \ttbar and \tWy, alternative generator scenarios are tested for the simulation. These alternative scenarios are then used as systematic variations. They are all normalized to the nominal cross-section of the respective processes. 
+
+\subsection{\tty production modelling}
+For the signal, templates are created for all variations of the \tty production simulation with both normalisation and shape components. 
+
+\textbf{$\mu_R$ and $\mu_F$:}\\
+The effect of the choices of the renormalisation ($\mu_R$) and factorisation ($\mu_F$) scales is estimated by varying $\mu_R$ and $\mu_F$ separately up and down by a factor of 2 with respect to the nominal sample value, thus resulting in two three-point uncertainties. The variations are done by altering event weights to reduce the effect of statistical fluctuations. %\textit{No symmetrisation methods are applied to the variations.} 
+
+\textbf{Parton Shower:}\\
+The uncertainty on the parton shower and hadronisation model (\tty production PS model) is estimated by comparing the \tty production nominal sample, produced with \amcshort + \pythia{}, with showering by \herwig{}. 
+
+\textbf{Pythia radiation:}\\
+The uncertainty on ISR is estimated through dedicated \tty production sample produced with \amcshort + \pythia{}, with the \emph{A14 var3c} eigentune of \pythia for low and high radiation scenarios is implemented (\tty production A14 \emph{var3c}). These events are compared against the nominal \amcshort + \pythia{} production with the standard \emph{A14} tune as detailed in~\cref{sec:data-and-mc-simulations}.
+
+
+\textbf{Parton Distribution Functions (PDF):}\\
+The uncertainty on parton distribution functions is propagated using the PDF4LHC15 prescription~\cite{Butterworth:2015oua}, using a set of 30 nuisance parameters. The PDF variations are propagated by using alternative MC generator weights corresponding to the PDF4LHC15 variations, stored within the nominal \amcshort + \pythia{} \tty production sample. The systematic uncertainty is obtained by comparing the PDF variations to the PDF4LHC15 baseline prediction and symmetrising them. All of the 30 PDF variations are considered as separate nuisance parameters.
+
+
+\subsection{\ttbar+$\gamma$ from decay/\tty decay modelling}
+
+For the \tty decay sample, the considered modelling variations are similar to \tty production and also in settings, except that the samples are available at LO precision.
+
+\textbf{$\mu_R$ and $\mu_F$:}\\
+The effect of the choices of the renormalisation ($\mu_R$) and factorisation ($\mu_F$) scales are estimated by varying $\mu_R$ and $\mu_F$ separately up and down by a factor of 2 with respect to the nominal sample value, thus resulting in two three-point uncertainties. The variations are done by altering event weights to reduce the effect of statistical fluctuations. 
+%\textit{No symmetrisation methods are applied to the variations.} 
+
+\textbf{Parton Shower:}\\
+The uncertainty on the parton shower and hadronisation model (\tty decay PS model) is estimated by comparing the \tty production nominal sample, produced with \madgraphshort + \pythia{}, with showering by \herwig{}. One-sided symmetrisation is applied.
+
+
+\textbf{Pythia radiation:}\\
+The uncertainty on ISR (for low and high radiation scenarios) is estimated by alternate generator weights stored within \tty decay sample produced with \madgraphshort + \pythia{}, where the \emph{A14 var3c} eigentune of \pythia (\tty decay A14 \emph{var3c}). They are compared against the nominal weight with the standard \emph{A14} tune as detailed in \cref{sec:data-and-mc-simulations}. 
+
+\textbf{Parton Distribution Functions (PDF):}\\
+The uncertainty on parton distribution functions is propagated using the PDF4LHC15 prescription~\cite{Butterworth:2015oua}, using a set of 30 nuisance parameters. The PDF variations are propagated by using alternative MC generator weights corresponding to the PDF4LHC15 variations, stored within the nominal \madgraphshort + \pythia{} \tty decay sample. The systematic uncertainty is obtained by comparing the PDF variations to the PDF4LHC15 baseline prediction and symmetrising them. All of the 30 PDF variations are considered as separate nuisance parameters.
+
+
+\subsection{\tWy modelling}
+%\label{sec:twy_unc}
+
+For the \tWy process, the following modelling uncertainties are considered: 
+\begin{itemize}
+    \item The uncertainty on renormalisation and factorisation scale is estimated by varying with a factor of 2 individually.
+%    
+    \item The parton shower and hadronisation variation: \herwig{} is used instead of \pythia{} 
+\end{itemize}
+These uncertainties are considered uncorrelated for the dedicated $Wt\gamma$ sample and the inclusive $Wt$ sample.
+
+\subsection{\ttbar modelling}
+
+Various systematic variations are considered for the modelling of \ttbar processes. These uncertainties only affect those \ttbar events that are part of the "Other $\gamma$" category. \ttbar-Events contributing to e-fakes or h-fakes are not affected by these systematic uncertainties 
+
+The effect of the choices of the renormalisation ($\mu_R$) and factorisation ($\mu_F$) scales are estimated by varying $\mu_R$ and $\mu_F$ separately up and down by a factor of 2 with respect to the nominal sample value, thus resulting in two three-point uncertainties. The variations are done by altering event weights to reduce the effect of statistical fluctuations.
+
+The uncertainties on the parton shower and hadronisation model (\ttbar PS model) are estimated by comparing the nominal \ttbar samples with alternative showering by \herwig{}. The same \powheg events are used in the shower. One-sided symmetrisation is applied.
+
+Uncertainties of radiation in ISR are estimated by comparing the nominal \powheg + \pythia{} sample against two sets of event weights produced with higher and lower radiation scenarios with the \pythia \emph{A14 var3c} eigentune (\ttbar \emph{var3c}). 
+
+The uncertainty of the \emph{hdamp} parameter of \powheg to control the hard gluon emission is estimated by generating an alternative set of events with \powheg + \pythia{} with the parameter set to twice its nominal value, which is then compared against the nominal prediction. One-sided symmetrisation is applied.
+
+The impact of the matching procedure between the ME calculation and the parton-shower model was evaluated using the \powheg + \pythia{} ($p_T$-hard) sample.
+
+%\textcolor{red}{The uncertainties due to the PDFs was estimated using the PDF4LHC15, following the prescription in ~\cite{Butterworth:2015oua}, which uses a set of 30 Hessian eigenvectors corresponding to independent PDF variations.}
+
+
+\subsection*{Background Normalisation Uncertainties:}
+\label{sec:bkg_norm}
+
+A normalization uncertainty of 20\% is currently being used for the \tty decay, which  is based on the NLO K-factor’s uncertainty from the previous \tty cross-section analysis \cite{Batool:2266485}. In the l+jets channel a 20\% normalisation uncertainty is assigned for $t\bar{t}$. For $t\bar{t}V$, $Z\gamma$, singletop  (s-channel and t-channel, $Wt$), Diboson and $Wt\gamma$ 50\% uncertainty is assigned. As we see a data-MC mismatch for $W\gamma$ we assigned a 50\% normalisation uncertainty, although this contribution is quite significant for the background in the l+jets channel. This rather large uncertainty shall give the fit the possibility to adjust $W\gamma$ accordingly. In the dilepton channel same uncertainties are assigned but for $Z\gamma$ it is reduced to 20\%. The reason for this is that in dilepton channel $Z\gamma$ is the main non \tty background. As $Z\gamma$ control region does show very good agreement between data and MC, a normalisation uncertainty of 50\% would be too large. For the backgrounds estimated with data driven methods, i.e., electron fakes and hadron fakes, the corresponding uncertainty on the SFs are considered separately. In the l+jets channel lepton-fakes are estimated with a data driven method. Hence the uncertainties on the SFs are assigned. In the dilepton channel the lepton-fakes contribution was found to be negligible.
+
+
+
