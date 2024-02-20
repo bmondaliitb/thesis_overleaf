@@ -1,6 +1,6 @@
 \section{\efake background estimation}
 \label{sec:background-estimation-efake}
-Electrons are reconstructed from the EM calorimeter energy deposits and the associated track reconstructed in the inner detector. Where photons are reconstructed from the EM calorimeter energy deposits. The reconstruction of electrons and photons is similar, and the main difference is that the electron has a track associated with it. Also, there are converted photons in which the photon is converted into electron and positron pair. The converted photon can be identified and reconstructed from the two tracks and energy deposit in the calorimeter. Therefore, it is possible that an electron is misidentified as a photon, which is called $e\to\gamma$ fake. The reconstruction efficiency of the electromagnetic cluster is very close to 100\%, the electron misreonstruction as photon is mainly due to tracking inefficiency or the bad matching between the track and the cluster.
+Electrons are reconstructed from the electro-magnetic (EM) calorimeter energy deposits and the associated track reconstructed in the inner detector. Where photons are reconstructed from the EM calorimeter energy deposits. The reconstruction of electrons and photons is similar, and the main difference is that the electron has a track associated with it. Also there are photons which produces pair of electron and positron after interacting with the detector material, referred as converted photon. The converted photon can be identified and reconstructed from the two tracks and energy deposit in the calorimeter. Therefore, it is possible that an electron is misidentified as a photon, which is called $e\to\gamma$ fake. The reconstruction efficiency of the electromagnetic cluster is very close to 100\%, the electron misreonstruction as photon is mainly due to tracking inefficiency or the bad matching between the track and the cluster.
 
 It is an important background in the single-lepton channel. The main processes contributing to this background are the \ttbar dileptonic decays (\chee and \chemu channels) and $Z\to ee$ decay, where one electron fakes a photon. Although the same algorithm is used to reconstruct electrons and photons in MC and data, the MC simulation doesn't model the $e\to\gamma$ fake events correctly. This discrepancy in the $e\to\gamma$ fake rate between data and MC is corrected by using a fake rate scale factor, which is the ratio between fake rate in data and the fake rate in MC. 
 
@@ -163,7 +163,7 @@ In Figure~\ref{fig:egammafake_fr_diff}, the type (d), which is not really a $e\r
 \label{fig:egammafake_fr_diff}
 \end{figure}   
 
-In order to calculate the data-driven fake rate in bin $i$, the only difference with respect to the above MC-based fake rate is that:
+In order to calculate the fake rate in data for bin $i$, the only difference with respect to the above MC-based fake rate is that:
 \begin{equation}
 \text{FR}_{dd}^i = \frac{N_{e,\gamma}^{\mathrm{data},i} - N_{e,\gamma}^{non\text{-}Z,i} - \mathrm{prompt\ QED}}{N_{e,e}^{\mathrm{data},i} - N_{e,e}^{non\text{-}Z,i} - \mathrm{prompt\ QED}}
 \end{equation}
