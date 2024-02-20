@@ -4,7 +4,7 @@ Electrons are reconstructed from the electro-magnetic (EM) calorimeter energy de
 
 It is an important background in the single-lepton channel. The main processes contributing to this background are the \ttbar dileptonic decays (\chee and \chemu channels) and $Z\to ee$ decay, where one electron fakes a photon. Although the same algorithm is used to reconstruct electrons and photons in MC and data, the MC simulation doesn't model the $e\to\gamma$ fake events correctly. This discrepancy in the $e\to\gamma$ fake rate between data and MC is corrected by using a fake rate scale factor, which is the ratio between fake rate in data and the fake rate in MC. 
 
-The fake rate is defined in ~\cref{sec:egammafakes_fr}. To calculate fake rate in data and in MC, fake enriched control regions are defined using \zee process. The \zee process is used in fake rate estimation because of the high cross-section of this process and this process has been studied in the LHC with great precision. If electron from \zee process is misidentified as a photon, then it will be a fake photon. The so-called tag-and-probe method is used to define two control regions, \zee and \zegamma. Since there is no \zegamma process in SM, in this control region the photon are expected to be fakes from electron from \zee process. The definition of these control regions is given in ~\cref{sec:egammafakes_cr}. Section \ref{sec:egammafakes_source} describes the studies on the source of $e\to\gamma$ fakes by matching them to the truth level particles. Section \ref{sec:egammafakes_fr} defines the fake rate and contains the calculation of the fake rate scale factor.
+Fake rate can be defined as the probability that an true electron is misreconstructed as a photon (define in ~\cref{sec:egammafakes_fr}). To estimate fake rate, a fake enriched control region is defined using \zee process. The \zee process has very high cross-section meaning it is produced in the detector very frequently and thereby saturates the detector phase space with electrons. This makes the dataset statisticaly robust making solid foundation for the probabilistic measurement of fake rate. Also this process is very precisely measured in the detector. If electron from \zee process is misidentified as a photon, then it will be a fake photon. The so-called tag-and-probe method is used to define two control regions, \zee and \zegamma. Since there is no \zegamma process in SM, in this control region the photon are expected to be fakes from electron from \zee process. The definition of these control regions is given in ~\cref{sec:egammafakes_cr}. Section \ref{sec:egammafakes_source} describes the studies on the source of $e\to\gamma$ fakes by matching them to the truth level particles. Section \ref{sec:egammafakes_fr} defines the fake rate, estimation of fake rate in MC and data and also contains the calculation of the fake rate scale factor (SF). The 2D scale factors are obtained in \pt and \abseta bins of the probe photon, and also calculated for converted and unconverted photons separately. Later the systematic uncertainties on the SF measurement is discussed.
 
 \begin{figure}[!htbp]
 \centering
@@ -13,16 +13,18 @@ The fake rate is defined in ~\cref{sec:egammafakes_fr}. To calculate fake rate i
 \label{fig:egammafake_cr_toy}
 \end{figure} 
 
-
+%----------------------------------------------
+% control regions 
+%----------------------------------------------
 \subsection{Control regions}
 \label{sec:egammafakes_cr}
+Tag and probe method is used to create $e\gamma$ and $ee$ control regions. In this method The $e\gamma$ CR is created using the following requirements:
 
-To study the $e\to\gamma$ fake rate, a fake enriched control region is defined by selecting events having a pair of back-to-back electron and photon, which will be called $e\gamma$ control region. The requirements include:
 \begin{itemize}
 \item Exactly one electron which is trigger matched.
 \item At least one photon. The leading \pt photon is referred simply as photon in the following.
 \item The opening angle between the electron and the photon to be larger than 150 degrees. This requirement helps to reduce different backgrounds due to hadron being misreconstructed as photon and prompt photons radiated from the electron.
-\item The invariant mass of the electron and the photon to be within 50 GeV around the $Z$ mass. 
+\item The invariant mass of the electron and the photon to be within 50 GeV around the $Z$ mass.
 \end{itemize}
 In the selected events, the electron is called \textit{tag electron} and the photon is called \textit{probe photon}.
 
@@ -30,49 +32,40 @@ Another control region, that will be called $ee$ control region, is defined in e
 
 \begin{figure}[!htbp]
 \centering
-%\includegraphics[width=0.49, scale=2.0\textwidth]{figures/egammafakes/efake_truth_matching.pdf}}
 {\includegraphics[width=0.69\textwidth]{figures/egammafakes/efakeCR.pdf}}
 \caption [] {Definition of $ee$ and $e\gamma$ control regions.}
 \label{fig:egammafake_cr}
 \end{figure} 
-
-%The cut-flows of these two control region selections are shown in Table~\ref{tab:egammafake_crcutflow} in Appendix~\ref{app:cutflow} for the $Z\to ee$ MC sample, which is expected to be the dominant process in these two control regions.
-
 \FloatBarrier
-\subsection{Fake sources}
+
+%-----------------------------------
+% fake sources
+%-----------------------------------
+\subsection{Sources of the fake photon}
 \label{sec:egammafakes_source}
 
-The $Z\to ee$ MC events selected in the above described $e\gamma$ control region can be used to study the source of $e\to\gamma$ fakes, by matching the probe photon with a truth particle before the detector simulation.
-The matching is done by extrapolating the track of the truth particle to the calorimeter layer and calculating the angular distance between the truth particle and the EM cluster, from which the photon is reconstructed.
-If the distance is smaller than a reference value ($\Delta R < 0.3$), the truth particle is considered to be the source of the photon.
+The $Z\to ee$ MC events selected in the above described $e\gamma$ control region can be used to study the source of $e\to\gamma$ fakes, by matching the probe photon with a truth particle before the detector simulation. The matching is done by extrapolating the track of the truth particle to the calorimeter layer and calculating the angular distance between the truth particle and the EM cluster, from which the photon is reconstructed. If the distance is smaller than a reference value ($\Delta R < 0.3$), the truth particle is considered to be the source of the photon.
 
 After truth matching, the photon is categorised into four classes.
 \begin{itemize}
 \item Type (a): denoted as "mis-reco.", where the photon is matched to a true electron. 87\% of the selected photons belong to this class.
-\item Type (b): denoted as "mis-match", where the photon is matched to a true photon, but the photon's \pt is larger than that of the true photon by more than 10\%\footnote{The 10\% threshold is chosen such that it is larger than the photon \pt resolution, of the order of a few percent, and thus such a large difference are expected to arise from a mismatch about the objects.}, and at the same time, there is a nearby true electron with $\Delta R < 0.1$ w.r.t. the photon. 
-1.8\% of the selected photons belong to this class.
+\item Type (b): denoted as "mis-match", where the photon is matched to a true photon, but the photon's \pt is larger than that of the true photon by more than 10\%\footnote{The 10\% threshold is chosen such that it is larger than the photon \pt resolution, of the order of a few percent, and thus such a large difference are expected to arise from a mismatch about the objects.}, and at the same time, there is a nearby true electron with $\Delta R < 0.1$ w.r.t. the photon. 1.8\% of the selected photons belong to this class.
 \item Type (c): denoted as "non-prompt QED", where the photon is matched to a true photon, and their relative \pt difference is smaller than 10\%, although there is a nearby true electron with $\Delta R < 0.1$ w.r.t. the probe photon. 3\% of the selected photons belong to this class. The categorization into type (b) and (c) using the 10\% criterion is only done for illustration purposes to better understand the composition of the fake photons. All three categories (a) -- (c) are considered inclusively as $e\rightarrow \gamma$ fakes. %This categorization is done only for illustration of the impact of different sources.
 
-\item Type (d): denoted as "prompt QED", where the photon is matched to a true photon, and there is no nearby true electron with $\Delta R < 0.1$ w.r.t. the photon. 
-8\% of the selected photons belong to this class. 
+\item Type (d): denoted as "prompt QED", where the photon is matched to a true photon, and there is no nearby true electron with $\Delta R < 0.1$ w.r.t. the photon. 8\% of the selected photons belong to this class. 
 \end{itemize}
-The categorization is summarized in Figure~\ref{fig:egammafake_classes}. The categorization is meant for illustration purposes, all sources of $e\rightarrow \gamma$ fake photons (type(a), type(b) and type(c)) are considered to estimate the fake rate in MC. 
+
+The categorization is summarized in Figure~\ref{fig:egammafake_classes}. The categorization is meant for illustration purposes, all sources of $e\rightarrow \gamma$ fake photons (type(a), type(b) and type(c)) are considered in estimating the fake rate in MC. 
 
 
 \begin{figure}[!htbp]
 \centering
-%\includegraphics[width=0.49, scale=2.0\textwidth]{figures/egammafakes/efake_truth_matching.pdf}}
 {\includegraphics[width=0.69\textwidth]{figures/egammafakes/efake_truth_matching.pdf}}
 \caption [] {The categorisation of the selected probe photons in the $e\gamma$ control region via truth particle matching.}
 \label{fig:egammafake_classes}
 \end{figure}  
 
-In the following, to better understand these four types of photons, their kinematics are shown and compared to that of the probe electron, when available.
-
-The \pt and $\eta$ of the probe photons are compared to those of the probe electron in Figure~\ref{fig:egammafake_probepteta}. 
-It can be seen that the \pt spectrum is rather similar between photon type (a), (b), and (c) and the probe electron, which indicates that they are truly $e\to\gamma$ fakes.
-For the $\eta$ distribution, type (a) and (b) peak at high $\eta$ region. Connecting to the fact that there is also larger upstream material in high $\eta$ region, it implies (a) and (b) are likely to be bremsstrahlung photons.
-For type (c), its $\eta$ spectrum is very similar to that of the probe electron. This could be explained by a very hard non-prompt QED that takes away almost all kinematics of its mother electron.
+In the following, to better understand these four types of photons, their kinematics are shown and compared to that of the probe electron (from $ee$ CR), when available. The \pt and \abseta of the probe photons are compared to those of the probe electron in ~\cref{fig:egammafake_probepteta}. It can be seen that the \pt spectrum is rather similar between photon type (a), (b), and (c) and the probe electron, which indicates that they are truly $e\to\gamma$ fakes. For the \abseta distribution, type (a) and (b) peak at high $\eta$ region. Connecting to the fact that there is also larger upstream material in high \abseta region, it implies (a) and (b) are likely to be bremsstrahlung photons. For type (c), its \abseta spectrum is very similar to that of the probe electron. This could be explained by a very hard non-prompt QED that takes away almost all kinematics of its mother electron.
 
 The invariant mass between the tag and probe in the two control regions are compared in Figure~\ref{fig:egammafake_tagmass}~\subref{fig:efakeInvmassComp}. The lower-shifted mass spectrum for type (d) indicates that it is a true prompt photon from the three body decay of $Z\to e^+e^- +\gamma$. Therefore, type (d) is not to be counted as $e\rightarrow \gamma$ fake. The invariant mass distribution of tag electron and probe photon is shown in Figure~\ref{fig:egammafake_tagmass}~\subref{fig:efakeInvmassStack}, with each type of photons being normalized to their expected yields. It can be seen that the fake is dominated by the type (a).
 
@@ -96,9 +89,11 @@ The invariant mass between the tag and probe in the two control regions are comp
 \caption [] {(a) Normalized invariant mass distribution between the tag and different probe types in the $e\gamma$ and $ee$ CR.(b) The invariant mass between the tag and different probe types in $e\gamma$ CR.}
 \label{fig:egammafake_tagmass}
 \end{figure} 
-  
-
 \FloatBarrier
+
+%-------------------------------------------------------------------------
+% fake rate
+%-------------------------------------------------------------------------
 \subsection{Fake rates}
 \label{sec:egammafakes_fr}
 
@@ -130,30 +125,9 @@ The fake rate (FR) in a particular bin $i$ is then defined as the ratio between 
 \text{FR}^i \equiv \frac{N_{e,\gamma}^i}{N_{e,e}^i} = p_{e\to\gamma}^i \times \frac{\epsilon_{\gamma}^i(F)}{\epsilon_{e2}^{reco,i} \cdot \epsilon_{e2}^{\mathrm{others},i}} = p_{e\to\gamma}^i \times C^i
 \end{equation}
 From the above formula, it is known that $FR^i$ is proportional to the $e\to\gamma$ faking probability in that bin. The proportion coefficient $C^i$ could also vary.
-%nd $\eta$ of the fake candidate, due to the \pt and $\eta$ dependency of those efficiencies.
 
-%An overall fake rate can be calculated using the same formula and its MC value are shown in Table~\ref{tab:egammafake_fr_mc}. 
-In Figure~\ref{fig:egammafake_fr_diff}, the \pt and $\eta$ dependencies of the absolute differential fake rate are shown.  
-In Figure~\ref{fig:egammafake_fr_diff}, the type (d), which is not really a $e\rightarrow \gamma$ fake photon, is shown for completeness.
-
-%\begin{table}[h]
-%\centering
-%\caption[]{The overall fake rate calculated from $Z\to ee$ MC for different types of photon. Type (d) is not counted as $e\rightarrow \gamma$ fake photon and its value is just shown for completeness. Only statistical uncertainties are shown here.}
-%\vspace*{0.5cm}
-%\begin{tabular}{c|c|c|c}
-%\hline
-%\hline
-%& N(probe $\gamma$) & N(probe $e$) & $\text{FR}_{\text{MC}}(\%)$ \\
-%\hline
-%%	Type(a) & \numRF{1903184.40}{3} $\pm$ \numRF{5493.01}{2} & \numRF{29430386.00}{3} $\pm$ \numRF{20219.12}{2} & \numRF{6.46}{2} \\ \hline 
-%%	Type(b) & \numRF{38927.34}{3}   $\pm$ \numRF{754.92}{2}  & \numRF{29430386.00}{3} $\pm$ \numRF{20219.12}{2} & \numRF{0.13}{2} \\ \hline 
-%%	Type(c) & \numRF{65791.93}{3}   $\pm$ \numRF{946.80}{2}  & \numRF{29430386.00}{3} $\pm$ \numRF{20219.12}{2} & \numRF{0.22}{2}\\ \hline 
-%%	Type(d) & \numRF{170667.31}{3}  $\pm$ \numRF{1549.72}{2} & \numRF{29430386.00}{3} $\pm$ \numRF{20219.12}{2} & \numRF{0.58}{2} \\ \hline 
-%%	All     & \numRF{2178570.98}{3} $\pm$ \numRF{5834.48}{2} & \numRF{29430386.00}{3} $\pm$ \numRF{20219.12}{2} & \numRF{7.40}{2}\\ \hline 
-%\hline
-%\end{tabular}
-%\label{tab:egammafake_fr_mc}
-%\end{table}
+\paragraph*{Fake rate in MC}
+In Figure~\ref{fig:egammafake_fr_diff}, the \pt and $\eta$ dependencies of the absolute differential fake rate are shown. In Figure~\ref{fig:egammafake_fr_diff}, the type (d), which is not $e\rightarrow \gamma$ fake photon, is shown for completeness.
 
 \begin{figure}[!htbp]
 \centering
@@ -162,7 +136,9 @@ In Figure~\ref{fig:egammafake_fr_diff}, the type (d), which is not really a $e\r
 \caption [] {The \pt (a) and $\eta$ (b) dependency of the fake rates}
 \label{fig:egammafake_fr_diff}
 \end{figure}   
+\FloatBarrier
 
+\paragraph*{Fake rate in data}
 In order to calculate the fake rate in data for bin $i$, the only difference with respect to the above MC-based fake rate is that:
 \begin{equation}
 \text{FR}_{dd}^i = \frac{N_{e,\gamma}^{\mathrm{data},i} - N_{e,\gamma}^{non\text{-}Z,i} - \mathrm{prompt\ QED}}{N_{e,e}^{\mathrm{data},i} - N_{e,e}^{non\text{-}Z,i} - \mathrm{prompt\ QED}}
@@ -183,8 +159,8 @@ The scale factor is derived in photon $p_T$ and $\eta$ separately for converted 
 %The nominal mass peak fits for each of these bins are shown in Figure \ref{fig:egammafake_fit_ptetadiff_eg} and Figure \ref{fig:egammafake_fit_ptetadiff_ee}.
 
 
-\vspace*{0.5cm}
-
+\subsection{Systematic uncertainties}
+\label{sec:efake_systematics}
 To estimate the systematic uncertainty of the scale factor, the following variations are considered: 
 \begin{itemize}
 \item signal function shape is changed from double sided Crystal-ball to MC predicted template (if necessary with smoothing to reduce fluctuation), the result of which is shown in Figure~\ref{fig:egammafake_fit_syst_converted}~\subref{fig:egammafake_fit_temp_converted} for the converted photon case and in Figure~\ref{fig:egammafake_fit_syst_unconverted}~\subref{fig:egammafake_fit_temp_unconverted} for the unconverted photon case. %We see a difference of 3.7\% (for converted photon) and 4.6\% (for unconverted photon) in the SF value with respect to the nominal SF value.  
